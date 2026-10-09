@@ -1,0 +1,165 @@
+{
+  "physical_pages": 26,
+  "content_pages": 25,
+  "sha256": "f2dbd65b00040cdacc2bea01467a18cdf09ccfa3aab88893f833f73e483f26d8",
+  "pages": [
+    {
+      "physical_page": 1,
+      "words": 13,
+      "width_pt": 841.89,
+      "height_pt": 595.276
+    },
+    {
+      "physical_page": 2,
+      "words": 1031,
+      "width_pt": 841.89,
+      "height_pt": 595.276
+    },
+    {
+      "physical_page": 3,
+      "words": 1254,
+      "width_pt": 841.89,
+      "height_pt": 595.276
+    },
+    {
+      "physical_page": 4,
+      "words": 1344,
+      "width_pt": 841.89,
+      "height_pt": 595.276
+    },
+    {
+      "physical_page": 5,
+      "words": 1161,
+      "width_pt": 841.89,
+      "height_pt": 595.276
+    },
+    {
+      "physical_page": 6,
+      "words": 1177,
+      "width_pt": 841.89,
+      "height_pt": 595.276
+    },
+    {
+      "physical_page": 7,
+      "words": 1049,
+      "width_pt": 841.89,
+      "height_pt": 595.276
+    },
+    {
+      "physical_page": 8,
+      "words": 1262,
+      "width_pt": 841.89,
+      "height_pt": 595.276
+    },
+    {
+      "physical_page": 9,
+      "words": 1122,
+      "width_pt": 841.89,
+      "height_pt": 595.276
+    },
+    {
+      "physical_page": 10,
+      "words": 1306,
+      "width_pt": 841.89,
+      "height_pt": 595.276
+    },
+    {
+      "physical_page": 11,
+      "words": 1107,
+      "width_pt": 841.89,
+      "height_pt": 595.276
+    },
+    {
+      "physical_page": 12,
+      "words": 1481,
+      "width_pt": 841.89,
+      "height_pt": 595.276
+    },
+    {
+      "physical_page": 13,
+      "words": 1020,
+      "width_pt": 841.89,
+      "height_pt": 595.276
+    },
+    {
+      "physical_page": 14,
+      "words": 1002,
+      "width_pt": 841.89,
+      "height_pt": 595.276
+    },
+    {
+      "physical_page": 15,
+      "words": 996,
+      "width_pt": 841.89,
+      "height_pt": 595.276
+    },
+    {
+      "physical_page": 16,
+      "words": 1006,
+      "width_pt": 841.89,
+      "height_pt": 595.276
+    },
+    {
+      "physical_page": 17,
+      "words": 1067,
+      "width_pt": 841.89,
+      "height_pt": 595.276
+    },
+    {
+      "physical_page": 18,
+      "words": 1150,
+      "width_pt": 841.89,
+      "height_pt": 595.276
+    },
+    {
+      "physical_page": 19,
+      "words": 1003,
+      "width_pt": 841.89,
+      "height_pt": 595.276
+    },
+    {
+      "physical_page": 20,
+      "words": 1050,
+      "width_pt": 841.89,
+      "height_pt": 595.276
+    },
+    {
+      "physical_page": 21,
+      "words": 868,
+      "width_pt": 841.89,
+      "height_pt": 595.276
+    },
+    {
+      "physical_page": 22,
+      "words": 1110,
+      "width_pt": 841.89,
+      "height_pt": 595.276
+    },
+    {
+      "physical_page": 23,
+      "words": 1116,
+      "width_pt": 841.89,
+      "height_pt": 595.276
+    },
+    {
+      "physical_page": 24,
+      "words": 1043,
+      "width_pt": 841.89,
+      "height_pt": 595.276
+    },
+    {
+      "physical_page": 25,
+      "words": 1186,
+      "width_pt": 841.89,
+      "height_pt": 595.276
+    },
+    {
+      "physical_page": 26,
+      "words": 965,
+      "width_pt": 841.89,
+      "height_pt": 595.276
+    }
+  ],
+  "page_bounds_passed": true,
+  "visual_review": "separate manual review"
+}

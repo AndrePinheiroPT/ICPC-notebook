@@ -1,0 +1,67 @@
+\chapter{Geometry}
+
+\section{Conventions and formulas}
+\begin{itemize}[nosep,leftmargin=*]
+\item Prefer integer predicates when the input is integral; use \texttt{toReal} to obtain
+\texttt{P2} for real constructions. Point differences, products
+and sums must fit T. Prefer ll to int for integer predicates. Finite real inputs/intermediates; nearly parallel
+lines or collinear triples can amplify rounding errors.
+\item No universal eps: choose by scale and by quantity (length, squared
+length, area). Keep sort comparisons exact. Angles in radians;
+$\pi=\operatorname{acos}(-1)$, degrees $\times\pi/180$.
+\item Triangle sides $a,b,c$, opposite angles $A,B,C$:
+$a^2=b^2+c^2-2bc\cos A$;
+$a/\sin A=b/\sin B=c/\sin C=2R$, R the circumradius
+of a nondegenerate triangle.
+\item Area $\Delta=bc\sin A/2=\sqrt{s(s-a)(s-b)(s-c)}$,
+$s=(a+b+c)/2$; require valid triangle sides.
+Circle arc length $r\theta$, sector area $r^2\theta/2$.
+\item Clamp acos arguments to $[-1,1]$ and tiny negative radicands to 0
+only when caused by rounding, not to hide invalid input.
+\end{itemize}
+
+\section{Points, lines and segments}
+\kactlimport{Point.h}
+\kactlimport{Predicates.h}
+\kactlimport{lineIntersection.h}
+\kactlimport{LineSegInter.h}
+\kactlimport{Projection2.h}
+
+\section{Polygons}
+\kactlimport{PolyArea.h}
+\kactlimport{PolygonCentroid.h}
+\kactlimport{PointInPoly.h}
+\kactlimport{Hull.h}
+\kactlimport{PointInConvex.h}
+\kactlimport{HullDiameter2.h}
+\kactlimport{ConvexCut.h}
+\begin{itemize}[nosep,leftmargin=*]
+\item After clipping, remove collinear vertices with hull before using
+queries that require a strictly convex polygon.
+\end{itemize}
+
+\section{Circles}
+\kactlimport{Circle2.h}
+\kactlimport{CircleTangents.h}
+\kactlimport{CirclePolygonArea.h}
+\kactlimport{EnclosingCircle.h}
+
+\section{Point sets and area unions}
+\kactlimport{NearestPair.h}
+\kactlimport{ManhattanMST.h}
+\kactlimport{RectUnion.h}
+
+\section{Spatial grid / radius queries}
+\begin{itemize}[nosep,leftmargin=*]
+\item For radius $r>0$, use square cells of side r with key
+$(\lfloor x/r\rfloor,\lfloor y/r\rfloor)$. For integer data, use
+\texttt{floorDiv} from Mathematics; truncation is wrong for negatives.
+\item Store point IDs per cell. Check the cell and its 8 neighbours,
+then filter with squared distance $\le r^2$ in a type where the squared distances fit.
+To enumerate pairs once, query previous points before inserting the new
+point. For $r=0$, group identical coordinates instead.
+\item Hash lookup is expected $O(1)$; total work includes every candidate
+tested. Dense cells can make it $O(n^2)$; cell indices and neighbour offsets must fit their type.
+This enumerates neighbours; closest pair alone does not.
+\end{itemize}
+\par

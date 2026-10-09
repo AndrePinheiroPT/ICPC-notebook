@@ -1,0 +1,76 @@
+RUN ds-release
+PASS ds-release 2.48 s
+RUN ds-debug
+PASS ds-debug 117.93 s
+RUN geometry-adversarial-release
+PASS geometry-adversarial-release 2.2 s
+RUN geometry-adversarial-debug
+PASS geometry-adversarial-debug 13.7 s
+RUN geometry-circles-release
+PASS geometry-circles-release 1.45 s
+RUN geometry-circles-debug
+PASS geometry-circles-debug 4.64 s
+RUN geometry-extra-release
+PASS geometry-extra-release 1.38 s
+RUN geometry-extra-debug
+PASS geometry-extra-debug 7.49 s
+RUN geometry-polygons-release
+PASS geometry-polygons-release 4.34 s
+RUN geometry-polygons-debug
+PASS geometry-polygons-debug 17.31 s
+RUN geometry-primitives-release
+PASS geometry-primitives-release 2.8 s
+RUN geometry-primitives-debug
+PASS geometry-primitives-debug 6.49 s
+RUN geometry-spatial-release
+PASS geometry-spatial-release 2.18 s
+RUN geometry-spatial-debug
+PASS geometry-spatial-debug 19.82 s
+RUN graph-core-release
+PASS graph-core-release 2.05 s
+RUN graph-core-debug
+PASS graph-core-debug 10.7 s
+RUN graph-flow-release
+PASS graph-flow-release 1.75 s
+RUN graph-flow-debug
+PASS graph-flow-debug 7.74 s
+RUN graph-kactl-release
+PASS graph-kactl-release 1.13 s
+RUN graph-kactl-debug
+PASS graph-kactl-debug 29.65 s
+RUN graph-math-release
+PASS graph-math-release 1.08 s
+RUN graph-math-debug
+PASS graph-math-debug 4.15 s
+RUN graph-trees-release
+PASS graph-trees-release 1.98 s
+RUN graph-trees-debug
+PASS graph-trees-debug 14.25 s
+RUN graph-usage-release
+PASS graph-usage-release 2.83 s
+RUN graph-usage-debug
+PASS graph-usage-debug 14.11 s
+RUN math-core-release
+PASS math-core-release 2.03 s
+RUN math-core-debug
+PASS math-core-debug 9.5 s
+RUN math-crossaudit-release
+PASS math-crossaudit-release 1.23 s
+RUN math-crossaudit-debug
+PASS math-crossaudit-debug 3.94 s
+RUN math-kactl-release
+PASS math-kactl-release 1.28 s
+RUN math-kactl-debug
+PASS math-kactl-debug 7.44 s
+RUN number-core-release
+PASS number-core-release 1.58 s
+RUN number-core-debug
+PASS number-core-debug 5.99 s
+RUN strings-release
+PASS strings-release 1.78 s
+RUN strings-debug
+PASS strings-debug 9.5 s
+RUN various-release
+PASS various-release 2.18 s
+RUN various-debug
+PASS various-debug 12.16 s

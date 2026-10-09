@@ -1,0 +1,142 @@
+{
+  "dpi": 125,
+  "pages": [
+    {
+      "physical_page": 1,
+      "render_sha256": "748eba25d1a850e4faa22f7ad899f2142927dd57a9b6bff33ab32c61e5025dcb",
+      "visually_reviewed": true
+    },
+    {
+      "physical_page": 2,
+      "render_sha256": "caeffba542fedd197c09c37b7b5c1f66830c999a674f7d3cbe145754c4cb29d9",
+      "visually_reviewed": true
+    },
+    {
+      "physical_page": 3,
+      "render_sha256": "1a7ac18e9e3775cfcbdfbd3229faac467d110079d0acc8377ec123158b6ab5e5",
+      "visually_reviewed": true
+    },
+    {
+      "physical_page": 4,
+      "render_sha256": "900c9977affdbf1eb36f9877ae688a7323c8acd1a78a6d11ee310c20560057bd",
+      "visually_reviewed": true
+    },
+    {
+      "physical_page": 5,
+      "render_sha256": "291b7c6325a788588d99b22ca2502487a7fad51e5153db84f9960a07ac17adab",
+      "visually_reviewed": true
+    },
+    {
+      "physical_page": 6,
+      "render_sha256": "aab05fef6d18cc622a7db50cc9f15f6c47d90352de1c24225fcb15c45128ede7",
+      "visually_reviewed": true
+    },
+    {
+      "physical_page": 7,
+      "render_sha256": "66e3edeee54b9e85e0f3ae063e8a0d32dfd579c0b36941c985a14cbdbc43cf0d",
+      "visually_reviewed": true
+    },
+    {
+      "physical_page": 8,
+      "render_sha256": "a9ef08b21691d7843f7f783f893dbb28b462ea96923c74dafb67a28ace922ec1",
+      "visually_reviewed": true
+    },
+    {
+      "physical_page": 9,
+      "render_sha256": "3ca55430c7b98399b22e48ee45c25b0242c1e3b1f99c8abc31720ac4eecea7fa",
+      "visually_reviewed": true
+    },
+    {
+      "physical_page": 10,
+      "render_sha256": "9c6b28f5ad7a7c853ac6ce81e910ba61d2e59fa588978725d13ce542ffa782f6",
+      "visually_reviewed": true
+    },
+    {
+      "physical_page": 11,
+      "render_sha256": "e464c4a796d467f7510c933733c80f16f647aa315781a2fd1cc7c8c229d858c7",
+      "visually_reviewed": true
+    },
+    {
+      "physical_page": 12,
+      "render_sha256": "0e669792d613e426a7bca7aea02cc3e1ac3c6bb286d7528c896852201c5cf5b4",
+      "visually_reviewed": true
+    },
+    {
+      "physical_page": 13,
+      "render_sha256": "cf424a2061a5d3a70fe8abe73b3db6701f9eb42cd16254ba29c2bd5558f06def",
+      "visually_reviewed": true
+    },
+    {
+      "physical_page": 14,
+      "render_sha256": "ab2031770043f1d44dfab7d1d00fe103e7d4dccc12d8738e8583ea6be4914501",
+      "visually_reviewed": true
+    },
+    {
+      "physical_page": 15,
+      "render_sha256": "c975baef96da8d9e4a011b2ac8259f61b3d8005b8255ca210cbc7a5f70024989",
+      "visually_reviewed": true
+    },
+    {
+      "physical_page": 16,
+      "render_sha256": "2f30e8bb8bfcef7f18f846d815fc87accb5b48f8f063a3ed6f71cb33d624dcf0",
+      "visually_reviewed": true
+    },
+    {
+      "physical_page": 17,
+      "render_sha256": "d7c3f628db0f9c4dbc7d25f537c58a9b13e1a5ccc3d8ab6d5c8d8ce122e0d19b",
+      "visually_reviewed": true
+    },
+    {
+      "physical_page": 18,
+      "render_sha256": "3c1271b4c4befbb1cbfb7e8f7646408506af8f94966b3dfb02b95ca97a2968b5",
+      "visually_reviewed": true
+    },
+    {
+      "physical_page": 19,
+      "render_sha256": "973aef15e47c6732b0fe57d182c8b61609fe44cc80e86e9f1b5bdbdb10474e77",
+      "visually_reviewed": true
+    },
+    {
+      "physical_page": 20,
+      "render_sha256": "fe8ef977c34e0a4dc44d48c29760a40f84c160f505517ef653294e8e9f644777",
+      "visually_reviewed": true
+    },
+    {
+      "physical_page": 21,
+      "render_sha256": "4e6d06995db0cf3335ca38fa052baa41193e329e2f007bcc791fd2853372c3c8",
+      "visually_reviewed": true
+    },
+    {
+      "physical_page": 22,
+      "render_sha256": "322c303effe306be3622bc1be7c7d5eda2f9a84f111c69cee57d8b9ea310d412",
+      "visually_reviewed": true
+    },
+    {
+      "physical_page": 23,
+      "render_sha256": "0df3b9d64d1991909047db6197aa9820ba394821875ea0c10f51c301f3a3aa58",
+      "visually_reviewed": true
+    },
+    {
+      "physical_page": 24,
+      "render_sha256": "453b90093ebe4883a7c8cd6b92634987220b7e4ebbd812eeecd9b427f776c340",
+      "visually_reviewed": true
+    },
+    {
+      "physical_page": 25,
+      "render_sha256": "fc24eb1d02c28c64510428042ffb973cc8e5f1a96f53a49374381017129b6c08",
+      "visually_reviewed": true
+    },
+    {
+      "physical_page": 26,
+      "render_sha256": "3a0e65fccf6def8db3668293f63a8dee25747b7b4d39cf8df131e231eade303e",
+      "visually_reviewed": true
+    }
+  ],
+  "reports": [
+    "visual-root.txt",
+    "visual-graphs.txt",
+    "visual-ds.txt"
+  ],
+  "pdf_sha256": "f2dbd65b00040cdacc2bea01467a18cdf09ccfa3aab88893f833f73e483f26d8",
+  "all_passed": true
+}

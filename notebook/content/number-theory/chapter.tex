@@ -1,0 +1,83 @@
+\chapter{Number theory}
+
+\section{GCD and Diophantine equations}
+\begin{itemize}[nosep,leftmargin=*]
+\item \texttt{gcd(a,b)}: nonnegative GCD; \texttt{gcd(0,0)=0}.
+Absolute values must fit the common integer type.
+Time $O(\log(\min(|a|,|b|)+1))$.
+\item For $a,b\ge0$, LCM is zero if either is zero;
+otherwise $(a/\gcd(a,b))b$.
+\texttt{lcm(a,b)} requires a representable result.
+Before multiplying, test $a/\gcd(a,b)\le\mathrm{MAX}/b$.
+\end{itemize}
+\kactlimport{ExtGCD.h}
+\begin{itemize}[nosep,leftmargin=*]
+\item $ax+by=c$, $(a,b)\ne(0,0)$, $g=\gcd(a,b)$:
+solvable iff $g\mid c$. Scale B\'ezout coefficients by $c/g$.
+All solutions from a particular $(x_0,y_0)$:
+\[
+ x=x_0+(b/g)t,\qquad y=y_0-(a/g)t,\quad t\in\mathbb Z.
+\]
+\item Bound integer $t$ with \texttt{floorDiv}/\texttt{ceilDiv}
+(Mathematics), reversing inequalities for negative steps;
+zero steps impose only feasibility. Widen intermediate products.
+\item $a=b=0$: all pairs if $c=0$, otherwise no solution.
+\end{itemize}
+
+\section{Modular arithmetic}
+\begin{itemize}[nosep,leftmargin=*]
+\item m>0: normalize signed residues with \texttt{a\%=m; if(a<0) a+=m;}.
+Residues do not preserve the order of the original values.
+\item Product/power: \texttt{modMul}/\texttt{modPow} from Numerical's
+\texttt{ModPower.h}. Cast before multiplying; ordinary / is not modular division.
+\item Divide by b using its inverse, which exists iff $\gcd(b,m)=1$ for m>1.
+For PRIME p and $p\nmid b$, inverse $b^{p-2}\bmod p$.
+Reducing exponents modulo $\varphi(m)$ requires $\gcd(b,m)=1$.
+\end{itemize}
+\kactlimport{ModInv.h}
+\kactlimport{GeneralCRT.h}
+\kactlimport{ModLog.h}
+\kactlimport{ModSqrt.h}
+\kactlimport{ModSum.h}
+
+\section{Primes and factorization}
+\kactlimport{SPF.h}
+\kactlimport{TrialDivision.h}
+\kactlimport{Prime64.h}
+\kactlimport{Factor64.h}
+
+\section{Divisors}
+\kactlimport{Divisors.h}
+\begin{itemize}[nosep,leftmargin=*]
+\item $n\ge1$, $n=\prod p_i^{e_i}$:
+\[
+ \tau(n)=\prod(e_i+1),\qquad
+ \varphi(n)=n\prod(1-1/p_i).
+\]
+For $\varphi$, start at n and apply $v\mathrel{-}=v/p_i$
+once per distinct prime.
+\item Sum of divisors:
+\[
+ \sigma(n)=\prod(1+p_i+\cdots+p_i^{e_i})
+ =\prod\frac{p_i^{e_i+1}-1}{p_i-1}.
+\]
+Use geometric sums modulo m unless denominators are invertible;
+exact intermediate sums/powers may need \texttt{unsigned \_\_int128},
+even for 64-bit n.
+\item $n=1$: no prime factors; divisors $\{1\}$ and
+$\tau(1)=\sigma(1)=\varphi(1)=1$.
+\end{itemize}
+\section{Totient and Mobius}
+\kactlimport{TotientMobius.h}
+\begin{itemize}[nosep,leftmargin=*]
+\item $\sum_{d\mid n}\varphi(d)=n$, $\sum_{d\mid n}\mu(d)=[n=1]$.
+For $\gcd(a,n)=1$, $a^{\varphi(n)}\equiv1\pmod n$.
+\item Mobius inversion: if $g(n)=\sum_{d\mid n}f(d)$, then
+$f(n)=\sum_{d\mid n}\mu(d)g(n/d)$.
+For finite arrays, $g(n)=\sum_{n\mid d}f(d)$ gives
+$f(n)=\sum_{n\mid d}\mu(d/n)g(d)$.
+\item Primitive Pythagorean triples:
+$(m^2-n^2,2mn,m^2+n^2)$ with $m>n>0$, coprime m,n of opposite parity.
+Multiply by k>0 for all triples; interchange the legs if needed.
+\end{itemize}
+\par

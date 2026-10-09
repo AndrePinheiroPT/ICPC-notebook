@@ -1,0 +1,37 @@
+\documentclass[9pt, a4paper, notitlepage]{extreport}
+\usepackage{kactlpkg}
+\kactlcontentdir{content}
+
+\university{UMinho}{Universidade do Minho}{content/tex/uminho_logo.jpeg}
+\team{Better Call Solve}{André Pinheiro, Ângelo Fernandes, Gonçalo Faria}
+% \contest{ACM-ICPC World Finals 2017}{May 24, 2017}
+\contest{MIUP Team Reference}{2026-10-05}
+\enablecolors
+\hypersetup{pdftitle={Better Call Solve - MIUP Team Notebook},pdfauthor={Andre Pinheiro, Angelo Fernandes, Goncalo Faria},pdfsubject={Team reference - 25 content pages}}
+
+\begin{document}
+	\maketeampage
+	% Small KACTL header on the first page:
+	% \maketitle{``One Last Time'' Edition}{\today}
+	\begin{multicols*}{3}
+	\raggedcolumns
+	\linespread{1}
+	\fontsize{7.5}{8.2}\selectfont
+	\thispagestyle{fancy}
+	% Table of contents, without subsections:
+	\setcounter{tocdepth}{0}
+	\tableofcontents
+	\thispagestyle{fancy}
+
+	\kactlchapter{contest}
+	\kactlchapter{math}
+	\kactlchapter{data-structures}
+	\kactlchapter{numerical}
+	\kactlchapter{number-theory}
+	\kactlchapter{combinatorial}
+	\kactlchapter{graph}
+	\kactlchapter{geometry}
+	\kactlchapter{strings}
+	\kactlchapter{various}
+    \end{multicols*}
+\end{document}

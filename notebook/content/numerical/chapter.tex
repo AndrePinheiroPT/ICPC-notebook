@@ -1,0 +1,27 @@
+\chapter{Numerical}
+\section{Binary and unimodal search}
+\kactlimport{BinarySearch.h}
+\kactlimport{Bisection.h}
+\kactlimport{TernarySearch.h}
+\section{Modular arithmetic and matrices}
+\kactlimport{ModPower.h}
+\kactlimport{Matrix.h}
+\section{Linear systems}
+Each equation is a row, each variable a column. For $Ax=b$, pass
+\texttt{[A|b]}: m coefficients then the right-hand side.
+Rank -1 means impossible; rank m means unique; otherwise free variables exist.
+Choose real Gauss for measurements/expectations, modular Gauss for a prime field,
+and binary Gauss for XOR constraints.
+\kactlimport{Gauss.h}
+\kactlimport{GaussMod.h}
+\kactlimport{GaussBinary.h}
+\kactlimport{Determinant.h}
+\kactlimport{IntDeterminant.h}
+\kactlimport{MatrixInverse.h}
+\section{Polynomials and recurrences}
+\kactlimport{PolyInterpolate.h}
+\kactlimport{LinearRecurrence.h}
+\section{Convolution}
+\kactlimport{NTT.h}
+\kactlimport{FastFourierTransform.h}
+\par

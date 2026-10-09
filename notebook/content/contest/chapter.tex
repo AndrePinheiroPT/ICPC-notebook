@@ -1,0 +1,34 @@
+\chapter{Contest}
+\kactlimport[-l rawcpp]{template.cpp}
+\kactlimport[-l sh]{config.sh}
+\kactlimport[-l raw]{troubleshoot.txt}
+
+\section{Conventions / using a header}
+\begin{itemize}[nosep,leftmargin=*]
+\item Copy the Contest template, the selected header and the dependencies
+listed above its code. All snippets use GNU C++17; no \texttt{vi} alias.
+\texttt{vec<T>} means \texttt{vector<T>}; \texttt{ll} means \texttt{long long}.
+\texttt{rep(i,a,b)} iterates over $[a,b)$; \texttt{pb}, \texttt{all} and
+\texttt{sz} abbreviate push\_back, the iterator pair and an int size.
+\item Vertices/indices start at 0. Array ranges are $[l,r)$, prefix arrays
+have $n+1$ entries, and jump tables use \texttt{jmp[k][v]}.
+Closed geometric segments and value-domain bounds are labelled explicitly.
+\item Tree roots have \texttt{parent[root]=-1}. Shortest-path parents
+are also -1 at a source and at unreachable vertices: check the distance
+or the documented reachability result before reconstructing a path.
+Sentinelas de pais não são distâncias.
+\item Each header defines its own result contract: \texttt{INF} for
+weighted unreachable distances, -1 for unweighted BFS distances, and
+\texttt{-INF} for Bellman--Ford vertices affected by a reachable negative cycle.
+Use the exact sentinel returned by that implementation.
+\item \texttt{auto [x,y]} unpacks a pair; \texttt{if(ans)} checks an optional,
+\texttt{*ans} reads it, \texttt{nullopt} means no result. Template types are
+usually inferred; \texttt{Fenwick<ll>} explicitly chooses the sum type.
+\item \texttt{[\&](int x)\{...\}} is a local callback that can access
+outer variables. Internal helpers are implementation details unless
+the header documents them as part of its interface.
+\item Keep asserts in local testing. Widen \emph{before} arithmetic:
+\texttt{1LL*a*b}, \texttt{(\_\_int128)a*b}. An assignment to ll
+does not repair an earlier int overflow.
+\end{itemize}
+\input{content/contest/STLGuide.tex}

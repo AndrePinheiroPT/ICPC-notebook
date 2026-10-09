@@ -1,0 +1,28 @@
+\chapter{Data structures}
+\begin{itemize}[nosep,leftmargin=*]
+\item Public indices are 0-based; every range is $[l,r)$.
+ Prefix arrays have n+1 entries. Internal Fenwick/DSU bookkeeping may differ.
+\item T defaults to ll where applicable; arithmetic must fit the chosen type.
+ Use sparse tables for static minima, Fenwick for additive queries,
+ segment trees for general aggregates, lazy trees for range updates.
+\end{itemize}
+\section{Arrays and disjoint sets}
+\kactlimport{ArrayBasics.h}
+\kactlimport{UnionFind.h}
+\kactlimport{UnionFindRollback.h}
+\kactlimport{DynamicConnectivity.h}
+\section{Range queries}
+\kactlimport{Fenwick.h}
+\kactlimport{Fenwick2D.h}
+\kactlimport{SegmentTree.h}
+\kactlimport{LazySegTree.h}
+\kactlimport{SparseLazySegTree.h}
+\kactlimport{RMQ.h}
+\kactlimport{SqrtDecomposition.h}
+\kactlimport{PrefixSum2D.h}
+\kactlimport{Difference2D.h}
+\section{Ordered and editable containers}
+\kactlimport{OrderedSet.h}
+\kactlimport{HashMap.h}
+\kactlimport{Treap.h}
+\par

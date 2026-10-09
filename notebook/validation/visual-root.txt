@@ -1,0 +1,7 @@
+Physical pages 1–9 reviewed individually at 125 dpi using rendered PNGs.
+Cover: correct UMinho logo, team name and three names, with accents.
+Content pages: 3 columns, correct code colours, no clipping or text overlap, headers separate from content.
+Code continuations across columns/pages are expected KACTL layout; no missing content observed.
+Final documentation corrections require rerender comparison of any affected pages.
+
+FINAL PASS: reopened changed physical pages3,4,5,8 from pages-final. Pages1,2,6,7,9 are pixel-identical to the earlier reviewed render. Corrected recurrence condition and hypergeometric domain are visible; no clipping/overlap.

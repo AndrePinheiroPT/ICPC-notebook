@@ -1,0 +1,17 @@
+[
+  {
+    "label": "goncalo",
+    "path": "/home/zyndek/Downloads/notebookH-revisto-final.zip",
+    "sha256": "c02fe31d34c1705c33b0970da31bfea71b610833965564adf6e9583207edef5f"
+  },
+  {
+    "label": "andre",
+    "path": "/home/zyndek/NOTEBOOKS/notebookAndre.zip",
+    "sha256": "198f0739a3cc4840ca70b71cc99346e2147646501ed842dbcf93305e0b903051"
+  },
+  {
+    "label": "jet",
+    "path": "/home/zyndek/Downloads/notebookJet.zip",
+    "sha256": "77c404910bfef9850d2aeb2b304ebbe2ab21b8e01aa0d005ee307da4fe5313af"
+  }
+]

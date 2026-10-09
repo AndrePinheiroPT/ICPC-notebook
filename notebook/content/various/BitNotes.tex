@@ -1,0 +1,33 @@
+\section{Operações com bits}
+\leavevmode\par\nobreak
+\lstinputlisting[language=raw,frame=single,numbers=none,xleftmargin=3pt,framexleftmargin=0pt,aboveskip=0pt]{content/various/BitOperations.txt}
+\begin{itemize}[nosep,leftmargin=*]
+\item ctz/clz exigem $x\ne0$. Para 64 bits usar unsigned long long,
+1ULL e builtins terminados em ll; índices de deslocamento $<64$.
+Todos os 32/64 bits ligados: \lstinline|~0U| / \lstinline|~0ULL|.
+\item Para contar zeros com segurança quando x=0, usar
+\lstinline|x ? __builtin_ctzll(x) : 64| ou
+\lstinline|x ? __builtin_clzll(x) : 64| para unsigned long long.
+\item XOR: $a\oplus a=0$, $a\oplus0=a$; associativo/comutativo.
+$a\oplus b=a+b-2(a\mathbin{\&}b)$; alargar o tipo da aritmética normal.
+\item Submáscaras: começar s=m, processar s, parar em 0; caso contrário
+\lstinline|s=(s-1)&m|. Todas as máscaras/submáscaras: $O(3^k)$; SOS: $O(k2^k)$.
+\end{itemize}
+
+\section{Guia de complexidade}
+\begin{tabular}{@{}ll@{}}
+\textbf{Tamanho do input} & \textbf{Complexidade típica} \\
+\hline
+$n\le10$ & $O(n!)$ \\
+$n\le20$ & $O(2^n)$ \\
+$n\le500$ & $O(n^3)$ \\
+$n\le5000$ & $O(n^2)$ \\
+$n\le10^6$ & $O(n\log n)$ ou $O(n)$ \\
+$n$ grande & $O(\log n)$ ou $O(1)$ \\
+\end{tabular}
+\begin{itemize}[nosep,leftmargin=*]
+\item Limites aproximados: verificar tempo disponível, custo por transição
+ e total dos testes. $500^3=1.25\cdot10^8$ operações podem ser demasiado lentas.
+\item Verificar também memória: ll usa 8 bytes; um ll $dp[mask][v]$
+ usa cerca de $8n2^n$ bytes, mais containers e dados de reconstrução.
+\end{itemize}

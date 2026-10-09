@@ -1,0 +1,22 @@
+Antes de submeter:
+Testa exemplos, casos limite e input máximo.
+Confirma tempo/memória e o ficheiro a submeter.
+
+Wrong answer:
+Relê o enunciado; verifica índices e output.
+Overflow, valores por iniciar, dados por limpar?
+Segue um caso pequeno; compara com força bruta.
+Pede a um colega que reveja o raciocínio.
+
+Runtime error:
+Índices inválidos, iterators, divisão por zero?
+Stack overflow ou algum assert falhou?
+Corre sanitizers e os testes de STL debug.
+
+Time limit exceeded:
+Má complexidade, ciclos infinitos, cópias inúteis?
+Demasiado I/O ou output de debug?
+
+Memory limit exceeded:
+Alocações, cópias ou containers demasiado grandes?
+Limpa dados entre casos; verifica a memória total.

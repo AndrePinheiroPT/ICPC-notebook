@@ -1,0 +1,21 @@
+// x unsigned; 0 <= i,n < 32
+x << i                // x * 2^i (mod 2^32)
+x >> i                // floor(x / 2^i)
+
+x & (1U << i)         // testar bit i
+x | (1U << i)         // ligar bit i
+x & ~(1U << i)        // desligar bit i
+x ^ (1U << i)         // inverter bit i
+
+(x >> i) & 1U         // valor do bit i
+(1U << n) - 1         // n bits ligados
+
+x & (x - 1)           // remover último bit 1
+x & -x                // obter último bit 1
+x && !(x & (x - 1))   // potência de 2
+
+__builtin_popcount(x) // número de bits 1
+__builtin_ctz(x)      // zeros à direita
+__builtin_clz(x)      // zeros à esquerda
+
+mask ^ ((1U << n)-1)  // inverter n bits baixos

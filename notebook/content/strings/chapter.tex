@@ -1,0 +1,23 @@
+\chapter{Strings}
+\begin{itemize}[nosep,leftmargin=*]
+\item Indices start at 0; intervals $[l,r)$. Strings are byte sequences,
+ not Unicode code points. Lengths, node/pattern counts are below INT\_MAX.
+\item Substring is contiguous; subsequence may skip positions.
+\end{itemize}
+\section{Matching and hashing}
+\kactlimport{KMP.h}
+\kactlimport{ZFunction.h}
+\kactlimport{DoubleHash.h}
+\section{Dictionary and multiple patterns}
+\kactlimport{AlphabetTrie.h}
+\kactlimport{Aho.h}
+\section{Suffixes, palindromes and rotations}
+\kactlimport{Suffixes.h}
+\begin{itemize}[nosep,leftmargin=*]
+\item LCP of suffixes i and j: if i=j, return n-i; otherwise take the minimum
+ of lcp between their ranks with RMQ from Data structures. An empty lcp array
+ has no valid nonempty query; constructing RMQ on it is still valid.
+\end{itemize}
+\kactlimport{Palindromes.h}
+\kactlimport{LeastRotation.h}
+\par

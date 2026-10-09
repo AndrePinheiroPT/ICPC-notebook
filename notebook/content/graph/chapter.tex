@@ -1,0 +1,74 @@
+\chapter{Graph}
+\begin{itemize}[nosep,leftmargin=*]
+\item Vertices $[0,V)$. Adjacency is directed unless stated otherwise:
+\texttt{vec<vec<int>> g(n)} or weighted \texttt{vec<vec<pair<int,ll>>>}.
+An edge is $(to,weight)$; insert both directions for an undirected graph.
+Edge-list algorithms receive each undirected edge once.
+\item Parents use $-1$ at roots and unreachable vertices. Distances use the
+sentinel documented by each algorithm: BFS $-1$, weighted paths infinity.
+\end{itemize}
+\section{Traversal and shortest paths}
+\kactlimport{Traversal.h}
+\kactlimport{GridBFS.h}
+\kactlimport{Dijkstra.h}
+\kactlimport{ZeroOneBFS.h}
+\kactlimport{BellmanFord.h}
+\kactlimport{FloydWarshall.h}
+\section{DAG and minimum spanning forest}
+\kactlimport{Kahn.h}
+\begin{itemize}[nosep,leftmargin=*]
+\item DAG DP: process a complete topological order, ignoring unreachable
+states. For $u\to v$, relax $d[v]$ with $d[u]+w$ or add $ways[u]$.
+Negative edges are allowed in a DAG. Time $O(V+E)$.
+\end{itemize}
+\kactlimport{Kruskal.h}
+\section{Connectivity and constraints}
+\kactlimport{StrongComponents.h}
+\kactlimport{Lowlink.h}
+\kactlimport{TwoSAT.h}
+\kactlimport{Hierholzer.h}
+\section{Flow and matching}
+\begin{itemize}[nosep,leftmargin=*]
+\item Several terminals: add a super-source/sink. Vertex capacity:
+split $v_{in}\to v_{out}$ with that capacity, redirect incoming/outgoing
+edges. Unit edge capacities model edge-disjoint paths; vertex splitting
+models internally vertex-disjoint paths. An ``infinite'' capacity must
+exceed every relevant finite cut and fit the sum type.
+\item Matching chooses disjoint pairs. Maximum matching optimises their
+number; assignment/min-cost flow optimises cost; stable matching prevents
+mutually preferred blocking pairs. These are different objectives.
+\end{itemize}
+\kactlimport{DinicFlow.h}
+\kactlimport{MinCostFlow.h}
+\kactlimport{BipartiteMatching.h}
+\kactlimport{WeightedMatching.h}
+\kactlimport{StableMatching.h}
+\section{Trees and repeated successors}
+\kactlimport{JumpTable.h}
+\kactlimport{TreeTour.h}
+\kactlimport{TreeLCA.h}
+\kactlimport{HeavyLight.h}
+\kactlimport{TreeDiameter.h}
+\kactlimport{CompressTree.h}
+\kactlimport{CentroidDecomposition.h}
+\begin{itemize}[nosep,leftmargin=*]
+\item Tree DP: reverse TreeTour::ord processes children first. Rerooting
+adds the parent's contribution; exclude a child's own contribution before
+passing information to it. Prefix/suffix combinations avoid requiring an
+inverse; associative constant-time merges give $O(V)$ total time.
+\end{itemize}
+\section{Graph counting and degree sequences}
+\begin{itemize}[nosep,leftmargin=*]
+\item Matrix--Tree theorem: start with a zero $V\times V$ matrix $L$.
+For each arc $a\to b$, do $L[a][b]-=1$, $L[b][b]+=1$; for an undirected
+edge add both arcs. Delete row/column $r$: the determinant counts spanning
+out-arborescences rooted at $r$ (all vertices reachable from $r$).
+For undirected graphs any root gives the same number of spanning trees.
+Use \texttt{detMod} from IntDeterminant.h on that minor for the answer
+modulo any positive modulus.
+\item Erd\H{o}s--Gallai: nonnegative sorted degrees $d_1\ge\dots\ge d_n$
+form a simple undirected graph iff their sum is even and, for every
+$1\le k\le n$,
+$\sum_{i=1}^k d_i\le k(k-1)+\sum_{i=k+1}^n\min(d_i,k)$.
+These are degrees only; it does not construct the graph.
+\end{itemize}

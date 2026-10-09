@@ -1,0 +1,4 @@
+RUN math-usage-release
+PASS math-usage-release 2.22 s
+RUN math-usage-debug
+PASS math-usage-debug 9.7 s

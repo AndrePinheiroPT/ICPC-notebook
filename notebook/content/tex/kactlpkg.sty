@@ -1,0 +1,426 @@
+% This file contains LaTeX macros for KACTL
+% License: CC0
+\ProvidesPackage{kactlpkg}
+
+\usepackage[OT1,T1]{fontenc}
+\usepackage{lmodern}
+\renewcommand{\contentsname}{Contents}
+\usepackage[utf8]{inputenc}             % Encoding UTF-8
+\usepackage{listings}                   % Source code listings
+\usepackage{framed}                     % Source code listings
+\usepackage[a4paper,landscape,hmargin={0.5cm,0.5cm},vmargin={1.0cm,0.4cm}]{geometry}
+\usepackage{multicol}                   % Split page in multiple columns
+\usepackage{fancyhdr}                   % Fancy headers
+\usepackage{amsbsy, amssymb, amsmath}   % Enable math symbols
+\usepackage{tocloft}                    % Custom Table of Contents
+\usepackage{titletoc}                   % Design control over Table of Contents
+\usepackage{ifthen}                     % To enable some conditional programming in LaTeX
+\usepackage{courier}                    % To get bold typewriter typeface
+\usepackage{graphicx}                   % To rotate page numbers
+\usepackage{fix-cm}                     % Large font sizes
+\usepackage{paralist}                   % For compact enumerations
+\usepackage[inline]{enumitem}           % For horizontal lists
+\usepackage[parfill]{parskip}           % For compact enumerations
+% Team reference: use compact KACTL-size listings and the existing colour theme.
+\setlength{\parskip}{.3pt plus .2pt}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[normalem]{ulem}
+\usepackage[hidelinks,hypertexnames=false]{hyperref}        % For clickable table of contents
+
+% Config commands
+\newcommand{\subtitle}[1]{
+	\def\@subtitle{#1}
+}
+\newcommand{\team}[2]{
+	\def\@teamname{#1}
+	\def\@teammembers{#2}
+}
+\newcommand{\contest}[2]{
+	\def\@contestname{#1}
+	\def\@contestdate{#2}
+}
+\newcommand{\university}[3]{
+	\def\@unishort{#1}
+	\def\@unilong{#2}
+	\def\@unilogo{#3}
+}
+
+% VS Code's built-in Light (Visual Studio) theme.
+\newcommand{\enablecolors}{
+	\lstset{basicstyle=\fontsize{7}{7.7}\selectfont\ttfamily\color{codeText},
+		identifierstyle=\color{codeText},
+		keywordstyle=\color{codeKeyword},
+		commentstyle=\color{codeComment}\ttfamily\upshape,
+		stringstyle=\color{codeString},
+		directivestyle=\color{codeDirective}}
+}
+
+% Some default config
+\subtitle{new KACTL}
+\title{KTH Algorithm Competition Template Library}
+\newcommand{\PDFColor}{0}
+\def\@builddir{build}
+
+\def\today{\number\year-\ifthenelse{\number\month<10}{0}{}\number\month-\ifthenelse{\number\day<10}{0}{}\number\day}
+
+\renewcommand{\maketitle}[2]{
+	\begin{center}
+		{\Huge \@title}\\
+		{\huge \@subtitle{} version #2}\\[0.1cm]
+		{\Huge \textsc{#1}}
+	\end{center}
+}
+
+% Remove temp files from old failed runs
+\AtBeginDocument{\immediate\write18{rm -f \@builddir/header.tmp}}
+\AtEndDocument{\immediate\write18{rm -f \@builddir/header.tmp}\immediate\write18{rm -f \@builddir/header2.tmp}\immediate\write18{rm -f \@builddir/kactl.tmp}}
+
+% Include a list of source files at the top of every page.
+\newmarks\hdrmark
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\headheight 25pt
+\lhead{\@unishort}
+\chead{\immediate\write18{python3 content/tex/preprocessor.py --print-header "\splitbotmarks\hdrmark|\botmarks\hdrmark" -o \@builddir/header2.tmp}\immediate\input{\@builddir/header2.tmp}}
+\rhead{\thepage}
+%\lhead{}\chead{\thepage}\rhead{}
+\lfoot{}\cfoot{}\rfoot{}
+\fancyheadoffset{0pt}
+\fancyfootoffset{0pt}
+\setlength\headsep{5pt}
+
+\renewcommand\chapter{
+	\global\@topnum\z@
+	\secdef
+	\@chapter
+	\@schapter
+}
+
+% Don't add appendices to the Table of Contents
+\newboolean{appendixmode}
+\setboolean{appendixmode}{false}
+\let\Oldaddtoc\addcontentsline
+\renewcommand{\addcontentsline}[3]{
+	\ifthenelse{
+		\boolean{appendixmode}\and\equal{#1}{toc}
+	}{}{\Oldaddtoc{#1}{#2}{#3}}
+}
+
+% Redefine appendix
+\renewcommand\appendix{
+	\setcounter{tocdepth}{8}
+	\setcounter{chapter}{0}
+	\def\thechapter{\Alph{chapter}}
+	\setboolean{appendixmode}{true}
+% Continue the same columns; do not waste a page before the final notes.
+}
+
+\def\@makechapterhead#1{
+	\parindent \z@ \raggedright \normalfont
+		\interlinepenalty\@M
+	{\underline{\fontsize{16}{17}\selectfont \bfseries #1} }
+	\ifnum \c@secnumdepth >\m@ne
+		{\fontsize{16}{17}\selectfont\bfseries (\thechapter) \par\nobreak }
+	\fi
+	\startcontents[chapters]
+}
+
+\renewcommand\section{\@startsection {section}{1}{\z@}%
+                                   {3pt \@plus 1pt \@minus .5pt}%
+                                   {.4ex}%
+                                   {\normalfont\fontsize{11}{12}\selectfont\bfseries}}
+
+\renewcommand\subsection{\@startsection{subsection}{2}{\z@}
+	{3pt \@plus 1pt \@minus .5pt}
+	{.2ex}
+	{\normalfont\fontsize{9}{10}\selectfont\bfseries}}
+
+\renewcommand\subsubsection{\@startsection{subsubsection}{3}{\z@}
+	{3pt \@plus 1pt \@minus .5pt}
+	{1ex \@plus .2ex}
+	{\normalfont\fontsize{9}{10}\selectfont\bfseries}}
+
+% Styles for local toc
+\titlecontents{localsection}[1.5em]{\normalsize}{}
+	{\normalsize}{\titlerule*[0.8em]{.}\contentspage}
+\titlecontents{localsubsection}[3.8em]{\normalsize}{}
+	{\normalsize}{\titlerule*[0.8em]{.}\contentspage}
+
+% Styles for main toc
+\renewcommand{\chaptermark}[1]{\markboth{\emph{ #1}}{}}
+\renewcommand{\cftbeforetoctitleskip}{0pt}
+\renewcommand{\cftaftertoctitleskip}{10pt}
+\renewcommand{\cftbeforechapskip}{6pt}
+\renewcommand\cftchapfont{\large\bfseries}
+\renewcommand{\cftdotsep}{4.5}
+
+% Proper carets and tildes
+\newcommand*{\caret}{%
+  \begingroup
+    \fontencoding{T1}%
+    \fontfamily{pcr}%
+    \selectfont
+    \string^%
+  \endgroup
+}
+\renewcommand*{\tilde}{\raise.17ex\hbox{$\scriptstyle\mathtt{\sim}$}}
+
+% Fatter {} which are more distinguishable from ()
+\newcommand*{\nicelbrace}{%
+  \begingroup
+    \fontencoding{T1}%
+    \fontfamily{pcr}%
+    \selectfont
+	\scalebox{1.5}[1]{\{}%
+  \endgroup
+}
+\newcommand*{\nicerbrace}{%
+  \begingroup
+    \fontencoding{T1}%
+    \fontfamily{pcr}%
+    \selectfont
+	\scalebox{1.5}[1]{\}}%
+  \endgroup
+}
+
+\definecolor{codeText}{HTML}{000000}
+\definecolor{codeKeyword}{HTML}{0000FF}
+\definecolor{codeComment}{HTML}{008000}
+\definecolor{codeString}{HTML}{A31515}
+\definecolor{codeDirective}{HTML}{0000FF}
+\definecolor{codeGuide}{HTML}{D3D3D3}
+\definecolor{codeLineNumber}{HTML}{237893}
+\definecolor{uminhoRed}{HTML}{982219}
+
+% Keep language selection in the preprocessor; extend only C++ lexing.
+\lstdefinelanguage[Notebook]{C++}[ISO]{C++}{
+	morekeywords={alignas,alignof,char8_t,char16_t,char32_t,constexpr,
+		decltype,noexcept,nullptr,static_assert,thread_local,concept,
+		requires,consteval,constinit,co_await,co_return,co_yield},
+	deletestring=[b]',morestring=[m]'
+}
+\lstset{defaultdialect=[Notebook]C++}
+
+% Configure source code listings
+\lstset{language=C++}
+\lstset{morekeywords={alignas,alignof}}
+\lstset{deletedirectives={line}}
+\lstset{frame=single,framerule=0.3pt,rulecolor=\color{codeGuide},
+ backgroundcolor=\color{white},framesep=1.5pt,
+ xleftmargin=3pt,xrightmargin=3pt,framexleftmargin=0pt,numbers=none}
+\lstset{tabsize=2}
+\lstset{showstringspaces=false}
+\lstset{breaklines=true}
+\lstset{basicstyle=\fontsize{7}{7.7}\selectfont\ttfamily}
+\lstset{columns=fullflexible,keepspaces=true,breakindent=0pt,breakatwhitespace=false}
+\lstset{commentstyle=\normalfont\itshape}
+\lstset{literate={^}{\caret}{1} {~}{\tilde}{1}
+ {á}{{\'a}}1 {à}{{\`a}}1 {â}{{\^a}}1 {ã}{{\~a}}1
+ {é}{{\'e}}1 {ê}{{\^e}}1 {í}{{\'i}}1
+ {ó}{{\'o}}1 {ô}{{\^o}}1 {õ}{{\~o}}1 {ú}{{\'u}}1
+ {ü}{{\"u}}1 {ç}{{\c c}}1
+ {Á}{{\'A}}1 {À}{{\`A}}1 {Â}{{\^A}}1 {Ã}{{\~A}}1
+ {É}{{\'E}}1 {Ê}{{\^E}}1 {Í}{{\'I}}1
+ {Ó}{{\'O}}1 {Ô}{{\^O}}1 {Õ}{{\~O}}1 {Ú}{{\'U}}1
+ {Ü}{{\"U}}1 {Ç}{{\c C}}1 {º}{{\textordmasculine}}1
+ {ª}{{\textordfeminine}}1}
+\lstset{emptylines=*1}
+\lstset{inputencoding=utf8}
+\lstset{aboveskip=1.5pt}
+\lstset{belowskip=1pt}
+
+\lstdefinelanguage{raw}{} % Raw language, no keywords.
+
+% TextMate emits only invisible presentation escapes, never changes source.
+\def\VSColor{000000}
+\newcommand{\VS}[1]{\gdef\VSColor{#1}}
+\newcommand{\VSGuide}[1]{%
+ \rlap{\hspace*{#1\fontdimen2\font}%
+  {\color{codeGuide}\raisebox{-2.5pt}[0pt][0pt]{\rule{0.3pt}{8pt}}}}%
+}
+\def\VSGuides{}
+\newcommand{\VSLine}[2]{%
+ \gdef\VSGuides{#2}%
+ % Preserve the source indent when a line wraps in a narrow column.
+ \begingroup
+  \dimen@=#1\fontdimen2\font
+  \@tempdima=\linewidth \advance\@tempdima-\dimen@
+  \advance\dimen@\@totalleftmargin
+  \xdef\lst@breakcurrindent{\the\dimen@}%
+  \xdef\lst@breakshape{\noexpand\lst@breakcurrindent\space\the\@tempdima}%
+ \endgroup
+ \lst@parshape\VSGuides
+}
+\lstset{postbreak=\VSGuides}
+\lst@Key{vscode}{false}[t]{\lstKV@SetIf{#1}\lst@ifvscode}
+\lst@AddToHook{Output}{\lst@ifvscode\def\lst@thestyle{\color[HTML]{\VSColor}}\fi}
+\lst@AddToHook{OutputOther}{\lst@ifvscode\def\lst@thestyle{\color[HTML]{\VSColor}}\fi}
+\lst@AddToHook{Init}{\gdef\VSColor{000000}\gdef\VSGuides{}}
+
+\setlength{\columnseprule}{0.5pt}
+\setlength{\columnsep}{10pt}
+\setcounter{tocdepth}{1}
+
+\pdfsuppresswarningpagegroup=1
+
+\newcommand{\maketeampage}{
+	\pagestyle{empty}
+	\setcounter{page}{0}
+	\begin{center}
+		\vspace*{\fill}
+		\includegraphics[width=4.2cm]{\@unilogo}\par
+		\vspace{0.6cm}
+		{\Huge\bfseries UMinho\par}
+		\vspace{0.3cm}
+		{\fontsize{16}{17}\selectfont\bfseries\@teamname\par}
+		\vspace{0.35cm}
+		{\Large\fontencoding{T1}\selectfont\@teammembers\par}
+		\vspace{0.6cm}
+		{\large\@contestname\par}
+		\vspace*{\fill}
+	\end{center}
+	\clearpage
+	\pagestyle{fancy}
+}
+
+\newcommand{\kactlref}[1]{%
+	\ifthenelse{\boolean{appendixmode}}{}{%
+		\ifnum \value{section} > 0\relax
+			\addcontentsline{ptc}{subsection}{\texttt{#1}\hspace{0.2em}}%
+		\else
+			\addcontentsline{ptc}{section}{\texttt{#1}\hspace{0.2em}}%
+		\fi
+	}%
+	\marks\hdrmark{#1}%
+}
+
+% Like \needspace, except with flush bottoms.
+\newcommand{\myneedspace}[1]{%
+  \begingroup
+    \setlength{\dimen@}{#1}%
+    \vskip\dimen@
+    \penalty 9999%
+    \vskip -\dimen@
+    \vskip\z@skip
+  \endgroup
+}
+
+% Summary is read from header metadata, beside the existing filename.
+\newcommand{\kactlalgorithm}[2]{
+    \noindent\kactlref{#1}{\fontsize{9}{10}\selectfont\bfseries #1}%
+    \ifthenelse{\equal{#2}{}}{}{%
+        {\fontsize{7}{7.7}\selectfont\normalfont\enspace-- #2}}%
+    \par\nobreak
+}
+
+\newcommand{\kactlimport}[2][]{
+	\leftcaption{}\rightcaption{}
+	\setboolean{hasdescription}{false}
+	\setboolean{hasusage}{false}
+	\setboolean{hastime}{false}
+	\setboolean{hasmemory}{false}
+	\setboolean{hasleftcaption}{false}
+	\par\myneedspace{6\baselineskip}
+	\penalty-100
+	\filename@parse{#2}
+	\ifthenelse{\equal{\filename@ext}{h}}{}{
+		{\large #2}\par\nobreak
+	}
+	\immediate\write18{rm -f \@builddir/kactl.tmp}
+	\immediate\write18{python3 content/tex/preprocessor.py -i "\@kactldir/#2" -o \@builddir/kactl.tmp #1}
+	\immediate\input{\@builddir/kactl.tmp}
+}
+
+\newcommand{\import}[1]{
+	\input{"\@kactldir/#1"}
+}
+
+\newcommand{\kactlcontentdir}[1]{
+	\def\@kactlbasedir{#1}
+	\def\@kactldir{#1}
+}
+\kactlcontentdir{.}
+
+\newcommand{\kactlchapter}[1]{
+	\def\@kactldir{\@kactlbasedir/#1}
+	\input{"\@kactldir/chapter.tex"}
+	\def\@kactldir{\@kactlbasedir}
+}
+
+\newcommand{\kactlerror}[1]{
+	\PackageError{kactlpkg}{#1}{}
+}
+
+\newcommand{\kactlwarning}[1]{
+	\PackageWarning{kactlpkg}{#1}
+}
+
+\newboolean{hasleftcaption}
+\newcommand{\leftcaption}[1]{
+	\def\@leftcaption{#1}
+	\setboolean{hasleftcaption}{true}
+}
+\leftcaption{}
+\setboolean{hasleftcaption}{false}
+
+\newcommand{\rightcaption}[1]{
+	\def\@rightcaption{#1}
+}
+\rightcaption{}
+
+\newboolean{hasdescription}
+\newcommand{\defdescription}[1]{
+	\def\@defdescription{#1}
+	\setboolean{hasdescription}{true}
+}
+\defdescription{}
+\setboolean{hasdescription}{false}
+
+\newboolean{hasusage}
+\newcommand{\defusage}[1]{
+	\def\@defusage{\texttt{#1}}
+	\setboolean{hasusage}{true}
+}
+\defusage{}
+\setboolean{hasusage}{false}
+
+\newboolean{hastime}
+\newcommand{\deftime}[1]{
+	\def\@deftime{#1}
+	\setboolean{hastime}{true}
+}
+\deftime{}
+\setboolean{hastime}{false}
+
+\newboolean{hasmemory}
+\newcommand{\defmemory}[1]{
+	\def\@defmemory{#1}
+	\setboolean{hasmemory}{true}
+}
+\defmemory{}
+\setboolean{hasmemory}{false}
+
+\newcommand{\codeheader}[2]{
+	{\par\noindent\fontsize{7}{7.7}\selectfont
+	 \raggedright\textbf{#1:} #2\par}
+}
+
+\long\def\@makecaption#1#2{
+    \vspace{0pt}
+    \ifthenelse{\boolean{hasdescription}}{
+        {\par\noindent\fontsize{7}{7.7}\selectfont
+         \raggedright\@defdescription\par}
+    }{}
+    \ifthenelse{\boolean{hasusage}}{\codeheader{Usage}{\@defusage}}{}
+    \ifthenelse{\boolean{hasmemory}}{\codeheader{Memory}{\@defmemory}}{}
+    \ifthenelse{\boolean{hastime}}{\codeheader{Time}{\@deftime}}{}
+    \ifthenelse{\boolean{hasleftcaption}}{
+        {\par\noindent\fontsize{7}{7.7}\selectfont
+         \raggedright\texttt{\@leftcaption}\par}
+    }{}
+    \vspace{.5pt}
+}
+
+\newcommand{\bigo}[1] {\ensuremath{\mathcal{O} \left( #1 \right)}}
+
+\newcommand{\hardcolumnbreak}{\vfill\null\columnbreak}

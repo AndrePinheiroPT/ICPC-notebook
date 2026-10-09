@@ -1,0 +1,127 @@
+\chapter{Combinatorial}
+
+\section{Factorials and coefficients}
+\begin{itemize}[nosep,leftmargin=*]
+\item $0!=1$, $n!=n(n-1)!$. Exact factorials fit int through
+$n=12$, ll through $n=20$; use \texttt{cpp\_int} beyond these limits.
+\item For $n\ge0$, $0\le k\le n$:
+\[
+ \binom nk=\frac{n!}{k!(n-k)!}=\binom n{n-k}.
+\]
+Set $\binom nk=0$ for $k<0$ or $k>n$.
+\end{itemize}
+\kactlimport{Binomial.h}
+\kactlimport{ModComb.h}
+\begin{itemize}[nosep,leftmargin=*]
+\item Pascal: $\binom n0=\binom nn=1$,
+$\binom nk=\binom{n-1}{k-1}+\binom{n-1}k$.
+Rows through N in $O(N^2)$ time, $O(N)$ space;
+update k downwards. Also works modulo any positive m;
+widen sums before reducing.
+\item Multinomial: counts $k_i\ge0$, $s_i=\sum_{j\le i}k_j$,
+$N=\sum_i k_i$; permutations of a multiset:
+\[
+ \binom{N}{k_1,\ldots,k_r}
+ =\frac{N!}{\prod_i k_i!}
+ =\prod_{i=1}^r\binom{s_i}{k_i}.
+\]
+Use the product of binomials for exact arithmetic;
+modulo p use $\texttt{fact[N]}\prod_i\texttt{invfact[}k_i\texttt{]}$, with $N<lim\le p$.
+Empty product is 1. Products/results must fit the chosen type;
+use \texttt{modMul} for modular products.
+\end{itemize}
+
+\section{Inclusion--exclusion}
+\begin{itemize}[nosep,leftmargin=*]
+\item For finite sets $A_1,\ldots,A_k$:
+\[
+ \left|\bigcup_{i=1}^k A_i\right|
+ =\sum_{\emptyset\ne S\subseteq\{1,\ldots,k\}}
+ (-1)^{|S|+1}\left|\bigcap_{i\in S}A_i\right|.
+\]
+\item Avoid all forbidden sets: include the empty-set term
+$|\Omega|$ and use signs $(-1)^{|S|}$.
+There are $2^k$ terms; cost depends on computing intersections.
+Use signed/wider accumulators; normalize modular subtraction.
+\end{itemize}
+
+\section{Stars and bars}
+\begin{itemize}[nosep,leftmargin=*]
+\item n indistinguishable units, k labelled boxes, $n\ge0$, $k\ge1$:
+\[
+ \begin{aligned}
+ x_i\ge0,\ \sum x_i=n &: \binom{n+k-1}{k-1},\\
+ x_i\ge1,\ \sum x_i=n &: \binom{n-1}{k-1}\quad(n\ge k).
+ \end{aligned}
+\]
+Positive case is zero when $n<k$. For $k=0$, count is $[n=0]$.
+\item Bounds $l_i\le x_i\le u_i$, $l_i\ge0$: set $y_i=x_i-l_i$,
+replace n by $n-\sum l_i$, and upper bounds by $u_i-l_i$.
+If any $u_i<l_i$, zero solutions. Apply inclusion--exclusion
+to violations $y_i\ge u_i-l_i+1$.
+Skip negative residual sums before calling \texttt{binom}.
+\end{itemize}
+
+\section{Catalan numbers}
+\begin{itemize}[nosep,leftmargin=*]
+\item $C_0=1$; for $n\ge0$:
+\[
+C_n=\frac{1}{n+1}\binom{2n}n
+=\binom{2n}n-\binom{2n}{n+1}.
+\]
+Exact binomial terms must also fit the chosen type.
+\[
+ C_{n+1}=\sum_{i=0}^n C_iC_{n-i}.
+\]
+Recurrence: $O(N^2)$ time, $O(N)$ space through $C_N$.
+\item Counts: n matched parenthesis pairs; ordered full binary
+ trees with n internal nodes; triangulations of a convex polygon
+ with $n+2$ vertices ($n\ge1$).
+\item Difference/recurrence avoid modular division.
+\texttt{ModComb} needs $2n<lim\le p$; division by $n+1$
+modulo m requires $\gcd(n+1,m)=1$.
+\end{itemize}
+
+\section{Permutation cycles and parity}
+\kactlimport{PermCycles.h}
+\begin{itemize}[nosep,leftmargin=*]
+\item For a permutation of $[0,n)$ with c cycles, including fixed points:
+\[
+ \text{sign}=(-1)^{n-c},\qquad
+ \text{minimum arbitrary swaps}=n-c.
+\]
+Parity is $(n-c)\bmod2$; one transposition flips it.
+Repeated values or restricted swaps require a different model.
+\item Order under composition is the LCM of cycle lengths;
+empty permutation has order 1. Check LCM overflow (Number theory).
+\end{itemize}
+\section{Counting reference}
+\begin{itemize}[nosep,leftmargin=*]
+\item Derangements (no fixed point): $D_0=1,D_1=0$,
+$D_n=(n-1)(D_{n-1}+D_{n-2})$ for $n\ge2$.
+\item Lucas, PRIME p: write n,k in base p, then
+$\binom nk\equiv\prod_i\binom{n_i}{k_i}\pmod p$.
+Precompute \texttt{ModComb(p,p)} only if p is small enough to store.
+\item Unsigned Stirling first kind (permutations with k cycles):
+$c(n,k)=c(n-1,k-1)+(n-1)c(n-1,k)$.
+Second kind (partitions into k nonempty unlabelled groups):
+$S(n,k)=S(n-1,k-1)+kS(n-1,k)$.
+Both start at (0,0)=1 and are zero outside valid indices.
+Bell $B_n=\sum_k S(n,k)$ counts all set partitions.
+\item Eulerian numbers (permutations with k descents):
+$E(n,k)=(n-k)E(n-1,k-1)+(k+1)E(n-1,k)$;
+$E(0,0)=1$, invalid indices zero.
+\item Integer partitions, order ignored: $p(0)=1$, negative arguments zero;
+$p(n)=\sum_{k\ge1}(-1)^{k+1}[p(n-k(3k-1)/2)+p(n-k(3k+1)/2)]$.
+Stop when both arguments are negative; through N, $O(N\sqrt N)$ time.
+\item Burnside: configurations up to a symmetry group G:
+$|G|^{-1}\sum_{g\in G}|\operatorname{Fix}(g)|$.
+Necklaces: $n\ge1$ positions, c colours, rotations only:
+$n^{-1}\sum_{k=0}^{n-1}c^{\gcd(n,k)}$.
+Modular division requires an invertible group size.
+\item Labelled trees on n>=2 vertices: $n^{n-2}$; for prescribed
+positive degrees summing to $2n-2$: $(n-2)!/\prod_i(d_i-1)!$.
+One vertex has one tree. For a graph's spanning trees, use Matrix--Tree:
+delete one row/column of its degree-minus-adjacency Laplacian and take the determinant.
+\end{itemize}
+\par

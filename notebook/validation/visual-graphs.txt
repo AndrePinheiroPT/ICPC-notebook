@@ -1,0 +1,21 @@
+FINAL PASS: physical pages 10-17 (content page numbers 9-16), 125 dpi.
+
+First rendering: all eight pages individually opened with view_image.
+Final rendering: changed physical pages 10,11,12,15,16 individually opened again
+from validation/pages-final. Physical 13,14,17 are SHA-256 identical to the
+already-reviewed first rendering (independently verified).
+
+10 PASS: corrected ModSqrt '(p-x)%p.' is fully visible; no joined/lost text.
+11 PASS: number-theory code, corrected contracts and divisor formulas intact.
+12 PASS: combinatorial formulas/reference and code fit; no overlaps.
+13 PASS: graph intro, BFS/grid/Dijkstra/0-1 BFS fit and read correctly.
+14 PASS: Bellman/Floyd/Kahn/Kruskal/SCC and Lowlink intro intact.
+15 PASS: Hierholzer now explicitly returns one vertex src and no edge IDs
+         for empty-edge input; resulting layout fits.
+16 PASS: WeightedMatching explicitly returns cost 0 and an empty matching
+         for empty left input; resulting layout fits.
+17 PASS: stable matching, JumpTable, TreeTour/LCA/HLD and diameter intro intact;
+         revised HeavyLight maximum-query example is present.
+
+No clipping, overlapping blocks, missing glyphs, header collisions or unresolved
+content-rendering issues observed. Code continues normally across columns/pages.

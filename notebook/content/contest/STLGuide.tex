@@ -1,0 +1,25 @@
+\section{STL quick reference}
+\begin{itemize}[nosep,leftmargin=*]
+\item \texttt{sort(all(a))}: $O(n\log n)$, pairs compare lexicographically.
+A comparator must be strict: use \texttt{<}, never \texttt{<=}.
+\texttt{stable\_sort} preserves equal-key order.
+\item Sorted vector: \texttt{lower\_bound} finds the first value $\ge x$;
+\texttt{upper\_bound} the first $>x$. Both $O(\log n)$;
+their iterator difference counts equal values. Do not dereference end().
+\item \texttt{priority\_queue<T>} is a max-heap. For a min-heap use
+\texttt{priority\_queue<T,vec<T>,greater<T>>}. Push/pop $O(\log n)$,
+top $O(1)$; copy top before pop. Empty top/pop is invalid.
+\item \texttt{map}/\texttt{set}: ordered unique keys, $O(\log n)$ operations.
+\texttt{map[key]} inserts a default value; find() does not insert.
+Use the container's lower\_bound, not the generic iterator algorithm.
+\item \texttt{multiset} allows duplicates. erase(value) removes all copies;
+erase(iterator) removes one. For a map, \texttt{it->second} is the value.
+\item \texttt{unordered\_map}/\texttt{unordered\_set}: expected $O(1)$,
+worst $O(n)$ per operation. reserve() reduces reallocations;
+never rely on iteration order. Rehash invalidates iterators.
+\item \texttt{a.erase(unique(all(a)),a.end())} removes adjacent duplicates;
+sort first to deduplicate arbitrary values. Vector insert/erase in the
+middle costs $O(n)$; reallocation invalidates references/iterators.
+\item \texttt{next\_permutation(all(a))} visits lexicographic permutations;
+start sorted, include the first arrangement with do/while.
+\end{itemize}

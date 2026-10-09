@@ -1,0 +1,957 @@
+{
+  "active_headers": [
+    "content/math/IntDivision.h",
+    "content/math/ModAlign.h",
+    "content/math/Int128.h",
+    "content/math/Probability.h",
+    "content/data-structures/ArrayBasics.h",
+    "content/data-structures/UnionFind.h",
+    "content/data-structures/UnionFindRollback.h",
+    "content/data-structures/DynamicConnectivity.h",
+    "content/data-structures/Fenwick.h",
+    "content/data-structures/Fenwick2D.h",
+    "content/data-structures/SegmentTree.h",
+    "content/data-structures/LazySegTree.h",
+    "content/data-structures/SparseLazySegTree.h",
+    "content/data-structures/RMQ.h",
+    "content/data-structures/SqrtDecomposition.h",
+    "content/data-structures/PrefixSum2D.h",
+    "content/data-structures/Difference2D.h",
+    "content/data-structures/OrderedSet.h",
+    "content/data-structures/HashMap.h",
+    "content/data-structures/Treap.h",
+    "content/numerical/BinarySearch.h",
+    "content/numerical/Bisection.h",
+    "content/numerical/TernarySearch.h",
+    "content/numerical/ModPower.h",
+    "content/numerical/Matrix.h",
+    "content/numerical/Gauss.h",
+    "content/numerical/GaussMod.h",
+    "content/numerical/GaussBinary.h",
+    "content/numerical/Determinant.h",
+    "content/numerical/IntDeterminant.h",
+    "content/numerical/MatrixInverse.h",
+    "content/numerical/PolyInterpolate.h",
+    "content/numerical/LinearRecurrence.h",
+    "content/numerical/NTT.h",
+    "content/numerical/FastFourierTransform.h",
+    "content/number-theory/ExtGCD.h",
+    "content/number-theory/ModInv.h",
+    "content/number-theory/GeneralCRT.h",
+    "content/number-theory/ModLog.h",
+    "content/number-theory/ModSqrt.h",
+    "content/number-theory/ModSum.h",
+    "content/number-theory/SPF.h",
+    "content/number-theory/TrialDivision.h",
+    "content/number-theory/Prime64.h",
+    "content/number-theory/Factor64.h",
+    "content/number-theory/Divisors.h",
+    "content/number-theory/TotientMobius.h",
+    "content/combinatorial/Binomial.h",
+    "content/combinatorial/ModComb.h",
+    "content/combinatorial/PermCycles.h",
+    "content/graph/Traversal.h",
+    "content/graph/GridBFS.h",
+    "content/graph/Dijkstra.h",
+    "content/graph/ZeroOneBFS.h",
+    "content/graph/BellmanFord.h",
+    "content/graph/FloydWarshall.h",
+    "content/graph/Kahn.h",
+    "content/graph/Kruskal.h",
+    "content/graph/StrongComponents.h",
+    "content/graph/Lowlink.h",
+    "content/graph/TwoSAT.h",
+    "content/graph/Hierholzer.h",
+    "content/graph/DinicFlow.h",
+    "content/graph/MinCostFlow.h",
+    "content/graph/BipartiteMatching.h",
+    "content/graph/WeightedMatching.h",
+    "content/graph/StableMatching.h",
+    "content/graph/JumpTable.h",
+    "content/graph/TreeTour.h",
+    "content/graph/TreeLCA.h",
+    "content/graph/HeavyLight.h",
+    "content/graph/TreeDiameter.h",
+    "content/graph/CompressTree.h",
+    "content/graph/CentroidDecomposition.h",
+    "content/geometry/Point.h",
+    "content/geometry/Predicates.h",
+    "content/geometry/lineIntersection.h",
+    "content/geometry/LineSegInter.h",
+    "content/geometry/Projection2.h",
+    "content/geometry/PolyArea.h",
+    "content/geometry/PolygonCentroid.h",
+    "content/geometry/PointInPoly.h",
+    "content/geometry/Hull.h",
+    "content/geometry/PointInConvex.h",
+    "content/geometry/HullDiameter2.h",
+    "content/geometry/ConvexCut.h",
+    "content/geometry/Circle2.h",
+    "content/geometry/CircleTangents.h",
+    "content/geometry/CirclePolygonArea.h",
+    "content/geometry/EnclosingCircle.h",
+    "content/geometry/NearestPair.h",
+    "content/geometry/ManhattanMST.h",
+    "content/geometry/RectUnion.h",
+    "content/strings/KMP.h",
+    "content/strings/ZFunction.h",
+    "content/strings/DoubleHash.h",
+    "content/strings/AlphabetTrie.h",
+    "content/strings/Aho.h",
+    "content/strings/Suffixes.h",
+    "content/strings/Palindromes.h",
+    "content/strings/LeastRotation.h",
+    "content/various/CoordinateCompression.h",
+    "content/various/TwoPointers.h",
+    "content/various/MonotonicStack.h",
+    "content/various/MonotonicDeque.h",
+    "content/various/Subsequence.h",
+    "content/various/ClassicDP.h",
+    "content/various/SubsetBits.h",
+    "content/various/SOS.h",
+    "content/various/DigitDP.h",
+    "content/various/DivideAndConquerDP.h",
+    "content/various/XorBasis.h",
+    "content/various/CoverIntervals.h",
+    "content/various/Histogram.h",
+    "content/various/FunctionalCycle.h",
+    "content/various/LineHull.h",
+    "content/various/GregorianDays.h"
+  ],
+  "dependency_closure": [
+    "content/combinatorial/Binomial.h",
+    "content/combinatorial/ModComb.h",
+    "content/combinatorial/PermCycles.h",
+    "content/data-structures/ArrayBasics.h",
+    "content/data-structures/Difference2D.h",
+    "content/data-structures/DynamicConnectivity.h",
+    "content/data-structures/Fenwick.h",
+    "content/data-structures/Fenwick2D.h",
+    "content/data-structures/HashMap.h",
+    "content/data-structures/LazySegTree.h",
+    "content/data-structures/OrderedSet.h",
+    "content/data-structures/PrefixSum2D.h",
+    "content/data-structures/RMQ.h",
+    "content/data-structures/SegmentTree.h",
+    "content/data-structures/SparseLazySegTree.h",
+    "content/data-structures/SqrtDecomposition.h",
+    "content/data-structures/Treap.h",
+    "content/data-structures/UnionFind.h",
+    "content/data-structures/UnionFindRollback.h",
+    "content/geometry/Circle2.h",
+    "content/geometry/CirclePolygonArea.h",
+    "content/geometry/CircleTangents.h",
+    "content/geometry/ConvexCut.h",
+    "content/geometry/EnclosingCircle.h",
+    "content/geometry/Hull.h",
+    "content/geometry/HullDiameter2.h",
+    "content/geometry/LineSegInter.h",
+    "content/geometry/ManhattanMST.h",
+    "content/geometry/NearestPair.h",
+    "content/geometry/Point.h",
+    "content/geometry/PointInConvex.h",
+    "content/geometry/PointInPoly.h",
+    "content/geometry/PolyArea.h",
+    "content/geometry/PolygonCentroid.h",
+    "content/geometry/Predicates.h",
+    "content/geometry/Projection2.h",
+    "content/geometry/RectUnion.h",
+    "content/geometry/lineIntersection.h",
+    "content/graph/BellmanFord.h",
+    "content/graph/BipartiteMatching.h",
+    "content/graph/CentroidDecomposition.h",
+    "content/graph/CompressTree.h",
+    "content/graph/Dijkstra.h",
+    "content/graph/DinicFlow.h",
+    "content/graph/FloydWarshall.h",
+    "content/graph/GridBFS.h",
+    "content/graph/HeavyLight.h",
+    "content/graph/Hierholzer.h",
+    "content/graph/JumpTable.h",
+    "content/graph/Kahn.h",
+    "content/graph/Kruskal.h",
+    "content/graph/Lowlink.h",
+    "content/graph/MinCostFlow.h",
+    "content/graph/StableMatching.h",
+    "content/graph/StrongComponents.h",
+    "content/graph/Traversal.h",
+    "content/graph/TreeDiameter.h",
+    "content/graph/TreeLCA.h",
+    "content/graph/TreeTour.h",
+    "content/graph/TwoSAT.h",
+    "content/graph/WeightedMatching.h",
+    "content/graph/ZeroOneBFS.h",
+    "content/math/Int128.h",
+    "content/math/IntDivision.h",
+    "content/math/ModAlign.h",
+    "content/math/Probability.h",
+    "content/number-theory/Divisors.h",
+    "content/number-theory/ExtGCD.h",
+    "content/number-theory/Factor64.h",
+    "content/number-theory/GeneralCRT.h",
+    "content/number-theory/ModInv.h",
+    "content/number-theory/ModLog.h",
+    "content/number-theory/ModSqrt.h",
+    "content/number-theory/ModSum.h",
+    "content/number-theory/Prime64.h",
+    "content/number-theory/SPF.h",
+    "content/number-theory/TotientMobius.h",
+    "content/number-theory/TrialDivision.h",
+    "content/numerical/BinarySearch.h",
+    "content/numerical/Bisection.h",
+    "content/numerical/Determinant.h",
+    "content/numerical/FastFourierTransform.h",
+    "content/numerical/Gauss.h",
+    "content/numerical/GaussBinary.h",
+    "content/numerical/GaussMod.h",
+    "content/numerical/IntDeterminant.h",
+    "content/numerical/LinearRecurrence.h",
+    "content/numerical/Matrix.h",
+    "content/numerical/MatrixInverse.h",
+    "content/numerical/ModPower.h",
+    "content/numerical/NTT.h",
+    "content/numerical/PolyInterpolate.h",
+    "content/numerical/TernarySearch.h",
+    "content/strings/Aho.h",
+    "content/strings/AlphabetTrie.h",
+    "content/strings/DoubleHash.h",
+    "content/strings/KMP.h",
+    "content/strings/LeastRotation.h",
+    "content/strings/Palindromes.h",
+    "content/strings/Suffixes.h",
+    "content/strings/ZFunction.h",
+    "content/various/ClassicDP.h",
+    "content/various/CoordinateCompression.h",
+    "content/various/CoverIntervals.h",
+    "content/various/DigitDP.h",
+    "content/various/DivideAndConquerDP.h",
+    "content/various/FunctionalCycle.h",
+    "content/various/GregorianDays.h",
+    "content/various/Histogram.h",
+    "content/various/LineHull.h",
+    "content/various/MonotonicDeque.h",
+    "content/various/MonotonicStack.h",
+    "content/various/SOS.h",
+    "content/various/Subsequence.h",
+    "content/various/SubsetBits.h",
+    "content/various/TwoPointers.h",
+    "content/various/XorBasis.h"
+  ],
+  "results": [
+    {
+      "name": "content_math_IntDivision_h",
+      "exit_code": 0,
+      "seconds": 0.71
+    },
+    {
+      "name": "content_math_ModAlign_h",
+      "exit_code": 0,
+      "seconds": 0.71
+    },
+    {
+      "name": "content_math_Int128_h",
+      "exit_code": 0,
+      "seconds": 0.75
+    },
+    {
+      "name": "content_math_Probability_h",
+      "exit_code": 0,
+      "seconds": 0.72
+    },
+    {
+      "name": "content_data-structures_ArrayBasics_h",
+      "exit_code": 0,
+      "seconds": 0.74
+    },
+    {
+      "name": "content_data-structures_UnionFind_h",
+      "exit_code": 0,
+      "seconds": 0.72
+    },
+    {
+      "name": "content_data-structures_UnionFindRollback_h",
+      "exit_code": 0,
+      "seconds": 0.7
+    },
+    {
+      "name": "content_data-structures_DynamicConnectivity_h",
+      "exit_code": 0,
+      "seconds": 0.72
+    },
+    {
+      "name": "content_data-structures_Fenwick_h",
+      "exit_code": 0,
+      "seconds": 0.69
+    },
+    {
+      "name": "content_data-structures_Fenwick2D_h",
+      "exit_code": 0,
+      "seconds": 0.72
+    },
+    {
+      "name": "content_data-structures_SegmentTree_h",
+      "exit_code": 0,
+      "seconds": 0.67
+    },
+    {
+      "name": "content_data-structures_LazySegTree_h",
+      "exit_code": 0,
+      "seconds": 0.69
+    },
+    {
+      "name": "content_data-structures_SparseLazySegTree_h",
+      "exit_code": 0,
+      "seconds": 0.69
+    },
+    {
+      "name": "content_data-structures_RMQ_h",
+      "exit_code": 0,
+      "seconds": 0.68
+    },
+    {
+      "name": "content_data-structures_SqrtDecomposition_h",
+      "exit_code": 0,
+      "seconds": 0.69
+    },
+    {
+      "name": "content_data-structures_PrefixSum2D_h",
+      "exit_code": 0,
+      "seconds": 0.68
+    },
+    {
+      "name": "content_data-structures_Difference2D_h",
+      "exit_code": 0,
+      "seconds": 0.68
+    },
+    {
+      "name": "content_data-structures_OrderedSet_h",
+      "exit_code": 0,
+      "seconds": 0.76
+    },
+    {
+      "name": "content_data-structures_HashMap_h",
+      "exit_code": 0,
+      "seconds": 0.69
+    },
+    {
+      "name": "content_data-structures_Treap_h",
+      "exit_code": 0,
+      "seconds": 0.71
+    },
+    {
+      "name": "content_numerical_BinarySearch_h",
+      "exit_code": 0,
+      "seconds": 0.69
+    },
+    {
+      "name": "content_numerical_Bisection_h",
+      "exit_code": 0,
+      "seconds": 0.7
+    },
+    {
+      "name": "content_numerical_TernarySearch_h",
+      "exit_code": 0,
+      "seconds": 0.78
+    },
+    {
+      "name": "content_numerical_ModPower_h",
+      "exit_code": 0,
+      "seconds": 0.79
+    },
+    {
+      "name": "content_numerical_Matrix_h",
+      "exit_code": 0,
+      "seconds": 0.7
+    },
+    {
+      "name": "content_numerical_Gauss_h",
+      "exit_code": 0,
+      "seconds": 0.69
+    },
+    {
+      "name": "content_numerical_GaussMod_h",
+      "exit_code": 0,
+      "seconds": 0.71
+    },
+    {
+      "name": "content_numerical_GaussBinary_h",
+      "exit_code": 0,
+      "seconds": 0.72
+    },
+    {
+      "name": "content_numerical_Determinant_h",
+      "exit_code": 0,
+      "seconds": 0.7
+    },
+    {
+      "name": "content_numerical_IntDeterminant_h",
+      "exit_code": 0,
+      "seconds": 0.7
+    },
+    {
+      "name": "content_numerical_MatrixInverse_h",
+      "exit_code": 0,
+      "seconds": 0.69
+    },
+    {
+      "name": "content_numerical_PolyInterpolate_h",
+      "exit_code": 0,
+      "seconds": 0.69
+    },
+    {
+      "name": "content_numerical_LinearRecurrence_h",
+      "exit_code": 0,
+      "seconds": 0.77
+    },
+    {
+      "name": "content_numerical_NTT_h",
+      "exit_code": 0,
+      "seconds": 0.74
+    },
+    {
+      "name": "content_numerical_FastFourierTransform_h",
+      "exit_code": 0,
+      "seconds": 0.7
+    },
+    {
+      "name": "content_number-theory_ExtGCD_h",
+      "exit_code": 0,
+      "seconds": 0.68
+    },
+    {
+      "name": "content_number-theory_ModInv_h",
+      "exit_code": 0,
+      "seconds": 0.73
+    },
+    {
+      "name": "content_number-theory_GeneralCRT_h",
+      "exit_code": 0,
+      "seconds": 0.7
+    },
+    {
+      "name": "content_number-theory_ModLog_h",
+      "exit_code": 0,
+      "seconds": 0.72
+    },
+    {
+      "name": "content_number-theory_ModSqrt_h",
+      "exit_code": 0,
+      "seconds": 0.71
+    },
+    {
+      "name": "content_number-theory_ModSum_h",
+      "exit_code": 0,
+      "seconds": 0.7
+    },
+    {
+      "name": "content_number-theory_SPF_h",
+      "exit_code": 0,
+      "seconds": 0.7
+    },
+    {
+      "name": "content_number-theory_TrialDivision_h",
+      "exit_code": 0,
+      "seconds": 0.68
+    },
+    {
+      "name": "content_number-theory_Prime64_h",
+      "exit_code": 0,
+      "seconds": 0.69
+    },
+    {
+      "name": "content_number-theory_Factor64_h",
+      "exit_code": 0,
+      "seconds": 0.69
+    },
+    {
+      "name": "content_number-theory_Divisors_h",
+      "exit_code": 0,
+      "seconds": 0.68
+    },
+    {
+      "name": "content_number-theory_TotientMobius_h",
+      "exit_code": 0,
+      "seconds": 0.69
+    },
+    {
+      "name": "content_combinatorial_Binomial_h",
+      "exit_code": 0,
+      "seconds": 0.7
+    },
+    {
+      "name": "content_combinatorial_ModComb_h",
+      "exit_code": 0,
+      "seconds": 0.68
+    },
+    {
+      "name": "content_combinatorial_PermCycles_h",
+      "exit_code": 0,
+      "seconds": 0.68
+    },
+    {
+      "name": "content_graph_Traversal_h",
+      "exit_code": 0,
+      "seconds": 0.72
+    },
+    {
+      "name": "content_graph_GridBFS_h",
+      "exit_code": 0,
+      "seconds": 0.73
+    },
+    {
+      "name": "content_graph_Dijkstra_h",
+      "exit_code": 0,
+      "seconds": 0.7
+    },
+    {
+      "name": "content_graph_ZeroOneBFS_h",
+      "exit_code": 0,
+      "seconds": 0.7
+    },
+    {
+      "name": "content_graph_BellmanFord_h",
+      "exit_code": 0,
+      "seconds": 0.69
+    },
+    {
+      "name": "content_graph_FloydWarshall_h",
+      "exit_code": 0,
+      "seconds": 0.7
+    },
+    {
+      "name": "content_graph_Kahn_h",
+      "exit_code": 0,
+      "seconds": 0.68
+    },
+    {
+      "name": "content_graph_Kruskal_h",
+      "exit_code": 0,
+      "seconds": 0.66
+    },
+    {
+      "name": "content_graph_StrongComponents_h",
+      "exit_code": 0,
+      "seconds": 0.73
+    },
+    {
+      "name": "content_graph_Lowlink_h",
+      "exit_code": 0,
+      "seconds": 0.71
+    },
+    {
+      "name": "content_graph_TwoSAT_h",
+      "exit_code": 0,
+      "seconds": 0.71
+    },
+    {
+      "name": "content_graph_Hierholzer_h",
+      "exit_code": 0,
+      "seconds": 0.71
+    },
+    {
+      "name": "content_graph_DinicFlow_h",
+      "exit_code": 0,
+      "seconds": 0.74
+    },
+    {
+      "name": "content_graph_MinCostFlow_h",
+      "exit_code": 0,
+      "seconds": 0.74
+    },
+    {
+      "name": "content_graph_BipartiteMatching_h",
+      "exit_code": 0,
+      "seconds": 0.71
+    },
+    {
+      "name": "content_graph_WeightedMatching_h",
+      "exit_code": 0,
+      "seconds": 0.7
+    },
+    {
+      "name": "content_graph_StableMatching_h",
+      "exit_code": 0,
+      "seconds": 0.72
+    },
+    {
+      "name": "content_graph_JumpTable_h",
+      "exit_code": 0,
+      "seconds": 0.71
+    },
+    {
+      "name": "content_graph_TreeTour_h",
+      "exit_code": 0,
+      "seconds": 0.73
+    },
+    {
+      "name": "content_graph_TreeLCA_h",
+      "exit_code": 0,
+      "seconds": 0.72
+    },
+    {
+      "name": "content_graph_HeavyLight_h",
+      "exit_code": 0,
+      "seconds": 0.7
+    },
+    {
+      "name": "content_graph_TreeDiameter_h",
+      "exit_code": 0,
+      "seconds": 0.72
+    },
+    {
+      "name": "content_graph_CompressTree_h",
+      "exit_code": 0,
+      "seconds": 0.71
+    },
+    {
+      "name": "content_graph_CentroidDecomposition_h",
+      "exit_code": 0,
+      "seconds": 0.7
+    },
+    {
+      "name": "content_geometry_Point_h",
+      "exit_code": 0,
+      "seconds": 0.71
+    },
+    {
+      "name": "content_geometry_Predicates_h",
+      "exit_code": 0,
+      "seconds": 0.72
+    },
+    {
+      "name": "content_geometry_lineIntersection_h",
+      "exit_code": 0,
+      "seconds": 0.69
+    },
+    {
+      "name": "content_geometry_LineSegInter_h",
+      "exit_code": 0,
+      "seconds": 0.7
+    },
+    {
+      "name": "content_geometry_Projection2_h",
+      "exit_code": 0,
+      "seconds": 0.67
+    },
+    {
+      "name": "content_geometry_PolyArea_h",
+      "exit_code": 0,
+      "seconds": 0.66
+    },
+    {
+      "name": "content_geometry_PolygonCentroid_h",
+      "exit_code": 0,
+      "seconds": 0.7
+    },
+    {
+      "name": "content_geometry_PointInPoly_h",
+      "exit_code": 0,
+      "seconds": 0.68
+    },
+    {
+      "name": "content_geometry_Hull_h",
+      "exit_code": 0,
+      "seconds": 0.69
+    },
+    {
+      "name": "content_geometry_PointInConvex_h",
+      "exit_code": 0,
+      "seconds": 0.69
+    },
+    {
+      "name": "content_geometry_HullDiameter2_h",
+      "exit_code": 0,
+      "seconds": 0.68
+    },
+    {
+      "name": "content_geometry_ConvexCut_h",
+      "exit_code": 0,
+      "seconds": 0.7
+    },
+    {
+      "name": "content_geometry_Circle2_h",
+      "exit_code": 0,
+      "seconds": 0.7
+    },
+    {
+      "name": "content_geometry_CircleTangents_h",
+      "exit_code": 0,
+      "seconds": 0.72
+    },
+    {
+      "name": "content_geometry_CirclePolygonArea_h",
+      "exit_code": 0,
+      "seconds": 0.69
+    },
+    {
+      "name": "content_geometry_EnclosingCircle_h",
+      "exit_code": 0,
+      "seconds": 0.69
+    },
+    {
+      "name": "content_geometry_NearestPair_h",
+      "exit_code": 0,
+      "seconds": 0.68
+    },
+    {
+      "name": "content_geometry_ManhattanMST_h",
+      "exit_code": 0,
+      "seconds": 0.71
+    },
+    {
+      "name": "content_geometry_RectUnion_h",
+      "exit_code": 0,
+      "seconds": 0.71
+    },
+    {
+      "name": "content_strings_KMP_h",
+      "exit_code": 0,
+      "seconds": 0.7
+    },
+    {
+      "name": "content_strings_ZFunction_h",
+      "exit_code": 0,
+      "seconds": 0.66
+    },
+    {
+      "name": "content_strings_DoubleHash_h",
+      "exit_code": 0,
+      "seconds": 0.68
+    },
+    {
+      "name": "content_strings_AlphabetTrie_h",
+      "exit_code": 0,
+      "seconds": 0.69
+    },
+    {
+      "name": "content_strings_Aho_h",
+      "exit_code": 0,
+      "seconds": 0.7
+    },
+    {
+      "name": "content_strings_Suffixes_h",
+      "exit_code": 0,
+      "seconds": 0.7
+    },
+    {
+      "name": "content_strings_Palindromes_h",
+      "exit_code": 0,
+      "seconds": 0.7
+    },
+    {
+      "name": "content_strings_LeastRotation_h",
+      "exit_code": 0,
+      "seconds": 0.69
+    },
+    {
+      "name": "content_various_CoordinateCompression_h",
+      "exit_code": 0,
+      "seconds": 0.69
+    },
+    {
+      "name": "content_various_TwoPointers_h",
+      "exit_code": 0,
+      "seconds": 0.66
+    },
+    {
+      "name": "content_various_MonotonicStack_h",
+      "exit_code": 0,
+      "seconds": 0.67
+    },
+    {
+      "name": "content_various_MonotonicDeque_h",
+      "exit_code": 0,
+      "seconds": 0.67
+    },
+    {
+      "name": "content_various_Subsequence_h",
+      "exit_code": 0,
+      "seconds": 0.67
+    },
+    {
+      "name": "content_various_ClassicDP_h",
+      "exit_code": 0,
+      "seconds": 0.65
+    },
+    {
+      "name": "content_various_SubsetBits_h",
+      "exit_code": 0,
+      "seconds": 0.65
+    },
+    {
+      "name": "content_various_SOS_h",
+      "exit_code": 0,
+      "seconds": 0.7
+    },
+    {
+      "name": "content_various_DigitDP_h",
+      "exit_code": 0,
+      "seconds": 0.72
+    },
+    {
+      "name": "content_various_DivideAndConquerDP_h",
+      "exit_code": 0,
+      "seconds": 0.69
+    },
+    {
+      "name": "content_various_XorBasis_h",
+      "exit_code": 0,
+      "seconds": 0.7
+    },
+    {
+      "name": "content_various_CoverIntervals_h",
+      "exit_code": 0,
+      "seconds": 0.73
+    },
+    {
+      "name": "content_various_Histogram_h",
+      "exit_code": 0,
+      "seconds": 0.72
+    },
+    {
+      "name": "content_various_FunctionalCycle_h",
+      "exit_code": 0,
+      "seconds": 0.7
+    },
+    {
+      "name": "content_various_LineHull_h",
+      "exit_code": 0,
+      "seconds": 0.71
+    },
+    {
+      "name": "content_various_GregorianDays_h",
+      "exit_code": 0,
+      "seconds": 0.66
+    },
+    {
+      "name": "all-headers",
+      "exit_code": 0,
+      "seconds": 1.08
+    },
+    {
+      "name": "all-headers-local",
+      "exit_code": 0,
+      "seconds": 1.08
+    }
+  ],
+  "all_passed": true,
+  "source_sha256": {
+    "content/combinatorial/Binomial.h": "d943555bb37313e8154581cd806d093cd52cd5df3747d6bd72fe10feb0744acf",
+    "content/combinatorial/ModComb.h": "103ee17e8a59bc831e9ce45e3dd53d44e67aebd0f95ad371985439c5ea8868d0",
+    "content/combinatorial/PermCycles.h": "3e9a188c59f0e2500c9d1608bd39d9af45e0d8c304ea144dbeeb5bc51458d782",
+    "content/data-structures/ArrayBasics.h": "c52f6b02c0a23ec16444aa05d69bc7d802ed0f5b341a34cc834e41dc83711c28",
+    "content/data-structures/Difference2D.h": "2cec78ded77eee30f4e018bcaf01d68d0c3aed70feff31cbef7fc6929c01be44",
+    "content/data-structures/DynamicConnectivity.h": "32747f6951ee9ee6bc3768b9e0f136f99f266ba7d00d53f6e0002de9bd6d2fc7",
+    "content/data-structures/Fenwick.h": "3851d165ee27dce08a5135aa885976e743e90c89081686b267502d857e43133e",
+    "content/data-structures/Fenwick2D.h": "ad21c934449e0f3fa86c28ddc6cc4911aab872a2071876e6336f10920768c807",
+    "content/data-structures/HashMap.h": "485d0eae2d7c21950c9e1b9526d6cccbeba29cd2408d23dc5ae742e8fbd27f03",
+    "content/data-structures/LazySegTree.h": "9d82919781033d5666d6ee13a23e7ebe19681457481a47d96197dcad837eac96",
+    "content/data-structures/OrderedSet.h": "2c13452c36195fc7625c4992b77bc09c7f673e21a5d025267de91be39231ee4c",
+    "content/data-structures/PrefixSum2D.h": "6913c941acf292ae0bb45d2aafee4a73b23c4ea8406e271ebe34962d367f8413",
+    "content/data-structures/RMQ.h": "c1bc96542481544dd7729f99c751e485ffcd6ef07dc1ca678520e2208ec3b1c0",
+    "content/data-structures/SegmentTree.h": "5fe15a433d3c625ad96ee54cbeb2848ee379da938df29143bbac73680483bf15",
+    "content/data-structures/SparseLazySegTree.h": "3e1700907127148b481cff2052d199de8c1d67fa9a53336d0522e770b4fb7057",
+    "content/data-structures/SqrtDecomposition.h": "68aa8987ac0329f72c5c96732fb6e1cae93d08e30b3b7d3ba98b926b3af77a64",
+    "content/data-structures/Treap.h": "d041e1fa1912b14326f22a1e6f144f12c634475b614dc8d8c086915c5914e043",
+    "content/data-structures/UnionFind.h": "b66a15c1f213ee644b8b8b6378501719651d93f2700ae3ea7c0a5d5db84cf7ce",
+    "content/data-structures/UnionFindRollback.h": "9c3bca7fb809cc3e80cd461475636c418ac3d325a6997c7c0a2707ea466a7b07",
+    "content/geometry/Circle2.h": "ac5a614ae956304c5c1851afc88e1f98ce8f2ba595eccfce84472d41c63bdd37",
+    "content/geometry/CirclePolygonArea.h": "6e3f6f0f891f6bd92e905802a21ba8e20b581db9e49f28e2b98231de51a73f67",
+    "content/geometry/CircleTangents.h": "c54b961602755766472c8a5b5db8d0ae957e20609204ab7b747b8fa85dfe9b32",
+    "content/geometry/ConvexCut.h": "5b0d6a626c6f80cf722334d6d27279c4d549595cc745c9598ae5c4bc3eab9903",
+    "content/geometry/EnclosingCircle.h": "10eec313ffb771db71fdad42dd75a00fc7189b9dd4e30e74536e5af0dbab94c5",
+    "content/geometry/Hull.h": "b9b20c6aef005eded72fa86ace81c159361e6c7bdc481bd035b6a731579f560c",
+    "content/geometry/HullDiameter2.h": "c3be9e8a1957465e6d6eba324c22251777509297ac7717314436b28112015bc0",
+    "content/geometry/LineSegInter.h": "50db21b683a28f25d984b367c1376c418ac5077ff6af3bdfbc473ba94fb1874f",
+    "content/geometry/ManhattanMST.h": "08dfbeb4739a3c7df1c802091059caf6c494a53a195476682c8aabab07215cc4",
+    "content/geometry/NearestPair.h": "527b9e8bd1f089af5edbf49bf9311103298da669d0be730875b3cb24bb4f5804",
+    "content/geometry/Point.h": "4b9c4ad897c4b88675a6b30ff54a8a08fce54b6b42a988b33b8261a1b1fa51f6",
+    "content/geometry/PointInConvex.h": "3419e17e5e754c030070af0bd0d7fc5bc48f3fbb617f98b6e1ba6c8d0be174b2",
+    "content/geometry/PointInPoly.h": "f6f52b0cac0cc405409e7a51a438db09ec8b61e6372ddd7f9f76180f05ce5bcd",
+    "content/geometry/PolyArea.h": "59f25c67970f32bc9a599bd559aa37f0797f824c0d3de836825656913b0af5c6",
+    "content/geometry/PolygonCentroid.h": "b8a4b492ce2db507492d3653ded19279a3ec1cf2a28773eb7c81e2052385fcf1",
+    "content/geometry/Predicates.h": "a36ec014fe95b8f28a853ac342620ddfb2b626abc3bb192cfa4f20af80d823d7",
+    "content/geometry/Projection2.h": "52403acfacc2b90f92667225259d7d3ca6cd347978b4202a10073a0e1d3ddb49",
+    "content/geometry/RectUnion.h": "fe517fbde7024c68f7f524c21d3043c86af31bbd8fd31603fe9d2dbec032bda2",
+    "content/geometry/lineIntersection.h": "420883e645874b6f12b3435b0356922012b68102c71d55041e5ce194699e1b37",
+    "content/graph/BellmanFord.h": "24cd9896b43b53d044eb09bed2a8441338fa34f4ebe2e436bcf9cf6e2dc980e6",
+    "content/graph/BipartiteMatching.h": "8e8203291dc5ff71693fde54c252c4ecfc475506276255fe6fc7c069d64213e2",
+    "content/graph/CentroidDecomposition.h": "350340d3945fade5a57b04b36b663a218cb85ff503cdbfb7ec44264e541117e6",
+    "content/graph/CompressTree.h": "dfb05ad0fa2f7301fe064c459ad028a995f3e15449dee16eeed504cbca99aa4c",
+    "content/graph/Dijkstra.h": "9eb3075cf9a728d2c013901f09ed9a41473bda610664dc540ad8b9ee79d2febb",
+    "content/graph/DinicFlow.h": "c75e0ed7b325ccc3024fd7dbfda6676b36e7056ba89576c3a02c5108484eb475",
+    "content/graph/FloydWarshall.h": "c86f303c77f8c3f33164a2f877dceb9dae08f8e08a00466e48b595dd60f301fb",
+    "content/graph/GridBFS.h": "af78a2d94641e276760c611a4802f6e91e110a9497c408d2c8fa938fab1eb729",
+    "content/graph/HeavyLight.h": "f2aa6aa36c490dcc8f26e98e7e63a22ff5db0c436edc969bfa9e4262fc7c5eb8",
+    "content/graph/Hierholzer.h": "9fde13ea8af39cc27d32a5f96a56941643eea4d4df19c02eb9986f4b669aa08d",
+    "content/graph/JumpTable.h": "f5b7f58b57b95c83f289363191cad2e814b525feaaa2bdfb054cc69f1fc350a4",
+    "content/graph/Kahn.h": "063661aa512a90c57a95404211ed7929fa94c587ed92ebd01f6e47755d90512a",
+    "content/graph/Kruskal.h": "8c3f643fe865a0c60a5f0f20e8d72e9e2783e6ae698e5cc69a70f7744b01922e",
+    "content/graph/Lowlink.h": "954995dbe13e1420fda18ee943bc3e9f9312a664dac43236172ce1fef1d13c66",
+    "content/graph/MinCostFlow.h": "baf56dc2c530a4ab83b13fbbf84c538f5bc8c080c0b1e3995b32fc577f024245",
+    "content/graph/StableMatching.h": "2bb5a94c91f5b7cef04f02a953bfa9ab47a592a57c562e4c6b1966aebad435cf",
+    "content/graph/StrongComponents.h": "d7543cdc8d888ed46808e937ad23ba0d827928688d5e6f9fbfe770c85e121b4f",
+    "content/graph/Traversal.h": "6764de747498c23fbede8b6a0d466803bd3616c2140fdb286c35dbcee86e7d41",
+    "content/graph/TreeDiameter.h": "818184b7c47fe0213180b4ea51be9b0978007ac0152fe9a29ee8fce449e703bc",
+    "content/graph/TreeLCA.h": "996d69472552fc510db79ab1289264d6c115026c253317dd1c4ac28340df4de8",
+    "content/graph/TreeTour.h": "25478c6467c66902dfb76f07b1a23189a01d572b58a0a5fcdc465e742257d420",
+    "content/graph/TwoSAT.h": "d30f3ee2c2662de5bd248c558019d00a6a0d1bad08f7e2e28f42d0abb4cc2eb7",
+    "content/graph/WeightedMatching.h": "4a853239d75d1aa198c935b8356eb5cc12adaddbc403bcc262a0dff947a0ae84",
+    "content/graph/ZeroOneBFS.h": "eefbc182c18eaa88ce3bc666344064d5dc09f322bd7bbcbcb6f47f7bb5596f9f",
+    "content/math/Int128.h": "8a024003910a4d7655da058e4ee3881a17f335ec9efdff6924548b8ad3dbc844",
+    "content/math/IntDivision.h": "2fe0ef0d5657e94ffa59bd0dc3e6869778ac7942b9e8193092e41ba52ca9b80b",
+    "content/math/ModAlign.h": "8842d02409a11df3460687462f1b0c01633278347fdf32f65bcccfe3e52fdc72",
+    "content/math/Probability.h": "087825463a568fb78b83ff2b11b184d8fd27c2160db95352b2e62c1582fb921a",
+    "content/number-theory/Divisors.h": "f33d7d744b91b08d9a7bf00f74ed31e2ff0eac789544558fec9688e8af7ee8dc",
+    "content/number-theory/ExtGCD.h": "861e5a87eb68541cf2b42b050525924f249fb1b6942025dbd583e0854873b238",
+    "content/number-theory/Factor64.h": "4c3aafb4b505c394791b440803b1ad89b15f549bd3f5b0b69e1bab518dcf2d22",
+    "content/number-theory/GeneralCRT.h": "c6c02bc97388a12dcb1b8991244ae357a2b7e85fa3ba04bcffdce5e3c8510588",
+    "content/number-theory/ModInv.h": "bdf6ae6d35ee3558a9376595103ecd3ea4c2274cbf13e0d8de576a1da964c626",
+    "content/number-theory/ModLog.h": "67f50c0ccc0c77235bf0bda8b212bfddf55e3eff3171106e236ac770a3dc9241",
+    "content/number-theory/ModSqrt.h": "6cbdca1db7fe797d3d2e7a5f0aa276c71d5f08282cdf2852acbd61e5796087aa",
+    "content/number-theory/ModSum.h": "8d56874e5bd8f95a01b1775111d922c266fabb1c94f391e4d0fea432749d6e00",
+    "content/number-theory/Prime64.h": "46c4e84f4403cb0de1bb875f593571cad49061428c74dcba4bf78a64eacd56e3",
+    "content/number-theory/SPF.h": "8bc5f21c0e93942d5c13c0a4b2ea27227c1245d05a46a7fbec9fb1c0914995fd",
+    "content/number-theory/TotientMobius.h": "00844fb931a8dff5f335bacf41601260f7a585e77388c3c9a67d2c9e3f457cb0",
+    "content/number-theory/TrialDivision.h": "4135fac6a7f1d9f4a8bd572c07ed4f1a1eaa2206ea500ed8a942bb5dae484536",
+    "content/numerical/BinarySearch.h": "a5eaa97b81ff7e2d0413c5d5f2a15358d86175ea809c27b95ef62d4f382896ae",
+    "content/numerical/Bisection.h": "6da61a6f8339927a198e2d4706d4649c1b5814ba9b4e5958c07adbfc1ce37785",
+    "content/numerical/Determinant.h": "1c570a7ae59bdf608e207569ff6e4c3fb1ca4b85a1dcbc1d33dac35e884534e4",
+    "content/numerical/FastFourierTransform.h": "5b3c07843c2fdc4b6f14922e7d380f68dbc99ed79a1ca03336ca0c8d3ae44c01",
+    "content/numerical/Gauss.h": "5ac36a7f5056d66f72fc19f67eea2a772e47f0b36c6ce4a5cb06126f117a2a49",
+    "content/numerical/GaussBinary.h": "3f992516918798e571658cb00e62f4f7fb660aa610e6ddcd4636f5719d276cc3",
+    "content/numerical/GaussMod.h": "6b41baac9acbad8eeb173406fe9424dba5238692796c5d4b9d5a049158bd85a8",
+    "content/numerical/IntDeterminant.h": "0f441ea0057d3b23b036b04a4af6c6c4c2bdf8db5a6324cdbdc753b17bd35062",
+    "content/numerical/LinearRecurrence.h": "09d46004c3575dc19d3b7c29231864abec2a5bf7e0305b73930eaa0da3601d84",
+    "content/numerical/Matrix.h": "eac62c72702e18072e8e0a975a8e41f2c4394085d51ba568da3ef6c7bcaae653",
+    "content/numerical/MatrixInverse.h": "02fb17cbb48ea1b9046bf1456405966743ebf36a4c30fc1c55cdfd409b1da4e1",
+    "content/numerical/ModPower.h": "54f05dc78a7ca6d67a7d7325bb34b71f8a34255de35325aacadcf81f3227017b",
+    "content/numerical/NTT.h": "09d735c1faeab6fd0e8b8d2543caf9c83ef3552949f003edf88ba74d57325d09",
+    "content/numerical/PolyInterpolate.h": "89577c4dabb23db4ece066d59b8ba67517f1863a574c3b3bc82a86f9c9691af6",
+    "content/numerical/TernarySearch.h": "578fa3aa92cdad8b809516b59e0274a135a493c7dada8be9750adf5b878515b2",
+    "content/strings/Aho.h": "a4475433e7b4f1c012683b2d7f0207c1aa1ea2961f96a7fd7e6d60828ae099d1",
+    "content/strings/AlphabetTrie.h": "b3b0baa83c1bb29e569028af0e70fe9a4f9610396b82c353991b6bd85d3294fb",
+    "content/strings/DoubleHash.h": "43548d9f5c5d5c2dcddad26ea5178bfdf96cf04d62d1906e401ecbc0be80b99f",
+    "content/strings/KMP.h": "682f69761e39672b2da4a5ed03b3f228f0700af11e4d2811cd56f34250e5002e",
+    "content/strings/LeastRotation.h": "54ac8849400f2d6ff586e19cc1a56d37376620b776bcb8f15dc509b5a80587eb",
+    "content/strings/Palindromes.h": "fc03bf8eb6c0164a5b6bf073928e9dca1e17a553cfe5cb84f17ed945d6a98746",
+    "content/strings/Suffixes.h": "25a895294838c288b58d1c5b6699e702a9535718e528a627b848917ae7650bd5",
+    "content/strings/ZFunction.h": "da5f605e12732c3fb1cfc94a94f078c59e91890da248816c76dfc66a30c19717",
+    "content/various/ClassicDP.h": "2a6c91f67e91fb24658c20fe61584d521e137214c7cd09adffbe4d76e91afdd6",
+    "content/various/CoordinateCompression.h": "9b32dcb7e84c6c885938b1854e883dfedb7f99847d5731c7d0f177589cc18241",
+    "content/various/CoverIntervals.h": "b16386edbdff1457ac13985087da4e5d5967eab0fc11a37f15733cd8e4210a62",
+    "content/various/DigitDP.h": "b55f3abfb5419caaad69c05d72756a76903a9a1a5971bb23a80be38c596c7477",
+    "content/various/DivideAndConquerDP.h": "54384aae96ab32c519ee49b43073e0357f952ea4f3b1bdda349e6a1c6f94a0b9",
+    "content/various/FunctionalCycle.h": "f79b859fc4d0638b5f84f9a41d65f3ba63a86f2a7494a66beacf4e32c3b9ef2c",
+    "content/various/GregorianDays.h": "15d8634bebddb21a7478e83cbd9c8ed1062169d7aa9ed3afb4c4c14104b1d761",
+    "content/various/Histogram.h": "5209960bc65709b1f101a48a5b42bc86f4d0d8b2796eef95b13c806be8cbce5c",
+    "content/various/LineHull.h": "3aef9695ac81e3527a4a6adc908edd3e6a199a9df0015d5eb43e560c5ce38b8c",
+    "content/various/MonotonicDeque.h": "d7bc90150beb6018083cab1d40a3909421064ed6031c20bd7c4444e201f4c711",
+    "content/various/MonotonicStack.h": "aef33b45ff7fa58845d7b2d91c63876ef60e2d4256c5699ce88eec360f88439e",
+    "content/various/SOS.h": "686d8612827b287225b80a35c8bffd96f35acfc4e9b555202ba42f9a2cea1871",
+    "content/various/Subsequence.h": "a89365b240816fb66cea958599c1785dbfe48e65806cc518d61404e074fe0fac",
+    "content/various/SubsetBits.h": "bd93525041d296d8ef36d33619d2027dd375a26631fe12ffe83a65ac54e69094",
+    "content/various/TwoPointers.h": "45f185b3b1eeb0ad29651c21b2e2dc4a6c2a3693a0154574997255a668da2bea",
+    "content/various/XorBasis.h": "182f07d1386bd9ac1881e96105288c9c3e614f1ac5b6f1c46c3194992987def3"
+  }
+}

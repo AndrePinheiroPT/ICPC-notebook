@@ -1,0 +1,43 @@
+{
+  "runtime_records": 40,
+  "canonical_headers": 117,
+  "all_passed": true,
+  "documentation_only_adjustments": {
+    "content/numerical/Gauss.h": {
+      "recorded_sha256": "9348642982b7a7eb2e070d251085e36e500e70ae373839a626456154a5517753",
+      "final_sha256": "5ac36a7f5056d66f72fc19f67eea2a772e47f0b36c6ce4a5cb06126f117a2a49",
+      "executable_part_sha256": "b6a1db5c932201f507f2c7c629d81478bd25b257eb11951ba291be2da445188b",
+      "change": "opening documentation comment only"
+    },
+    "content/number-theory/ModSqrt.h": {
+      "recorded_sha256": "30d9d7959f059e383792aaaa057a5af390e02e236384c334a13bac69620d8cd6",
+      "final_sha256": "6cbdca1db7fe797d3d2e7a5f0aa276c71d5f08282cdf2852acbd61e5796087aa",
+      "executable_part_sha256": "68bb94a6308424f9ecd7212b80bd8d8ee1a536e7cd86d34b2a5aa3c9f16495da",
+      "change": "opening documentation comment only"
+    },
+    "content/number-theory/Divisors.h": {
+      "recorded_sha256": "e8563b0c4fa9ead07a393dc534666788ed04e4c9234866ce77dd9af65fe40100",
+      "final_sha256": "f33d7d744b91b08d9a7bf00f74ed31e2ff0eac789544558fec9688e8af7ee8dc",
+      "executable_part_sha256": "be7c4ca06aeb3ac60c9fd8bcdf1ec69422dc796a54869166cd0ca023c70036e6",
+      "change": "opening documentation comment only"
+    },
+    "content/number-theory/TotientMobius.h": {
+      "recorded_sha256": "41c56d7038bff9b22a2819f52971ba0d6f71622e8956c0b5f8c089936dafe111",
+      "final_sha256": "00844fb931a8dff5f335bacf41601260f7a585e77388c3c9a67d2c9e3f457cb0",
+      "executable_part_sha256": "31f45293109ad3082076ac01d6e9c1cda1545ba09a537001e5570d560fb50895",
+      "change": "opening documentation comment only"
+    },
+    "content/graph/Hierholzer.h": {
+      "recorded_sha256": "ebb2b6aaab02e2c6c2eb577b5c60559e11054189082dd24704c981feab9b8dde",
+      "final_sha256": "9fde13ea8af39cc27d32a5f96a56941643eea4d4df19c02eb9986f4b669aa08d",
+      "executable_part_sha256": "c3c9e895f4bb73c1a159e2673e1c04ee0f3fd7cfbd82bbe0ac1045f24686c86d",
+      "change": "opening documentation comment only"
+    },
+    "content/graph/WeightedMatching.h": {
+      "recorded_sha256": "0af1e0abb2947f5a81c378d88ea04b928aa32f9ccf41ad7af1c942de0fb1b7e5",
+      "final_sha256": "4a853239d75d1aa198c935b8356eb5cc12adaddbc403bcc262a0dff947a0ae84",
+      "executable_part_sha256": "fa835e4385c6551eea0317ab20ad0bd83cb073951cd27f456200e58b59f89a58",
+      "change": "opening documentation comment only"
+    }
+  }
+}

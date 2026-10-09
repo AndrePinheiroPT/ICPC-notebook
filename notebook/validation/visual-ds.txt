@@ -1,0 +1,14 @@
+Visual QA: physical pages 18–26 (printed content page numbers 17–25).
+Inspected all nine rendered PNGs with view_image, at the supplied 125 dpi.
+
+18 PASS: tree/centroid/geometry transition; no clipped text or overlapping columns. Minor non-blocking layout observation: CentroidDecomposition title and summary finish column 1, with its main description in column 2.
+19 PASS: geometry predicates, line/segment intersections, projections and polygons; code continuations readable, no clipping.
+20 PASS: hull diameter, convex cut, circle intersections/tangents and circle-polygon area; formulas and code fit.
+21 PASS: enclosing circle, nearest pair, Manhattan MST, rectangle union and Strings chapter transition; headings and content clear.
+22 PASS: KMP, Z, DoubleHash, Trie and Aho; long code lines wrap inside their frames, with no overlap or lost characters.
+23 PASS: Aho continuation, suffixes/LCP, Manacher, least rotation, compression and two pointers; all columns fit.
+24 PASS: windows, monotonic stack/deque, LIS and classical DP; Portuguese accented comments render correctly.
+25 PASS: subset bitset, SOS, digit DP, D&C DP, XOR basis, interval cover and histogram; math, comments and code visible.
+26 PASS: Floyd cycle, LineHull, Gregorian dates and bit/complexity reference; end of document clean, no extra section or clipping. Final column has ordinary unused space after content ends.
+
+No blocking visual defects found. Code/paragraph continuations at column/page boundaries are standard KACTL layout; none lost content. Syntax colours, accented text, mathematical symbols, running headers and page numbers render correctly across the inspected pages.

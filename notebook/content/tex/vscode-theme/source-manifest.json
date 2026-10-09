@@ -1,0 +1,23 @@
+{
+  "vscodeVersion": "1.137.0",
+  "source": "VS Code installed at /snap/code/current/usr/share/code/resources/app",
+  "files": {
+    "GRAMMAR-LICENSES.txt": "73610f4cc87174c61ec812a2b790abb99130cbe9d16ac27e1d7f2f9de7c523c2",
+    "VSCODE-LICENSE.txt": "b5cb7ff7859e7d282d98fc43ab081b0dda5dc659dc3385cf65740c759a7e6a6c",
+    "cpp-language-configuration.json": "26173e998a088561c17b888e1768a57119c790a5921f6dbca6dded754ff7f87d",
+    "cpp.embedded.macro.tmLanguage.json": "182dd550c76dcb8ef8a70d37d23cd0b0cc95dfd14da48c9c363c3474dfa9e533",
+    "cpp.tmLanguage.json": "5eeac5e63c17589c5cfd4df6e9bd86c4bdbcbabc54460b9c3457815dd52e63ff",
+    "light_vs.json": "b0ff51488c41d37e1263c991b9508bdf4e1b1cfacd670cae48de5eede108b3f6",
+    "shell-language-configuration.json": "fb793606a595a01d2672b2cabf496cd878c5ba93dffe0a40dc481360f1c96ac6",
+    "shell-unix-bash.tmLanguage.json": "c1de56a5d97bc5682d224017cae65deeaccdc0dd7dc85af436fdbaddb9b36588",
+    "vscode-oniguruma/LICENSE.txt": "ddde8aba8fe72b4830e27901fc78733eb6db7b6c653161075de213a6adeda3fd",
+    "vscode-oniguruma/NOTICES.txt": "615d94d89eacc046241518c247f6650a5df80d1adf4b284a756f500867620b35",
+    "vscode-oniguruma/SECURITY.md": "81ed58e26769508df9a2f761dad55b52c6c9de62fff06195b2702fcb7a97e883",
+    "vscode-oniguruma/package.json": "98a5eb60b6dbcad4e302c877b2d5aff312a890c42bddf32e0585cbd1e3ff0df9",
+    "vscode-oniguruma/release/main.js": "8eeebfd13b75baaf42e014e8492366e5e28c9a1336b006193a39a0f15bfb0b1e",
+    "vscode-oniguruma/release/onig.wasm": "fd885c2d12e5951e59d761ebd4a006e06254b1491fd6f530c92b69fb4d8d77d9",
+    "vscode-textmate/LICENSE.md": "b5cb7ff7859e7d282d98fc43ab081b0dda5dc659dc3385cf65740c759a7e6a6c",
+    "vscode-textmate/package.json": "985c992fd96fc2b51df49151a4d18c46cc83dff9f4dd381c94ef4a589e9e1828",
+    "vscode-textmate/release/main.js": "4839d824b4a595955f8b07f5911cbba477a91fa1ff98d30583d963966a3bf79f"
+  }
+}

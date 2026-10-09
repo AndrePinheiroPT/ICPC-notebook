@@ -1,0 +1,189 @@
+\chapter{Mathematics}
+
+\section{Quadratic equations}
+\begin{itemize}[nosep,leftmargin=*]
+\item $ax^2+bx+c=0$, $a\ne0$, $D=b^2-4ac$:
+\[
+ x_{1,2}=\frac{-b\pm\sqrt D}{2a},\qquad
+ x_1+x_2=-b/a,\quad x_1x_2=c/a.
+\]
+\item $D>0,=0,<0$: two, one, no real roots.
+Vertex $(-b/(2a),-D/(4a))$: minimum if $a>0$, maximum if $a<0$.
+\item $a=0$: linear. $a=b=0$: all $x$ if $c=0$, otherwise none.
+\item Widen intermediates; verify integer bounds exactly.
+\end{itemize}
+
+\section{Integer division and alignment}
+\kactlimport{IntDivision.h}
+\kactlimport{ModAlign.h}
+
+\section{Sums and progressions}
+\begin{itemize}[nosep,leftmargin=*]
+\item $n\ge0$; empty sum $=0$. Arithmetic: $a_i=a_0+id$.
+\[
+ \sum_{i=0}^{n-1}a_i=na_0+\frac{dn(n-1)}2.
+\]
+\item Geometric: $a_i=a_0r^i$.
+\[
+ \sum_{i=0}^{n-1}a_i=
+ \begin{cases}a_0(1-r^n)/(1-r),&r\ne1,\\na_0,&r=1.\end{cases}
+\]
+Infinite sum $a_0/(1-r)$ requires $|r|<1$.
+\item Power sums:
+\[
+ \begin{aligned}
+ \sum_{i=1}^n i&=\frac{n(n+1)}2,\\
+ \sum_{i=1}^n i^2&=\frac{n(n+1)(2n+1)}6,\\
+ \sum_{i=1}^n i^3&=\left(\frac{n(n+1)}2\right)^2,\\
+ \sum_{i=1}^n i^4&=\frac{n(n+1)(2n+1)(3n^2+3n-1)}{30}.
+ \end{aligned}
+\]
+\item For integers $0\le a\le b$ and $c\ne1$:
+\[
+ c^a+c^{a+1}+\cdots+c^b=\frac{c^{b+1}-c^a}{c-1}.
+\]
+For $c=1$, the sum is $b-a+1$.
+\item $S(n)=\sum_{i=0}^{n-1}f(i)$: sum on $[l,r)$ is $S(r)-S(l)$.
+\item Cancel exact factors or widen before multiplying.
+Division modulo $m$ requires an invertible denominator.
+\end{itemize}
+
+% Sums/Series formulas from the supplied original KACTL Mathematics.
+\section{Series}
+\begin{itemize}[nosep,leftmargin=*]
+\item For all real x:
+\[
+ e^x=1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+\cdots.
+\]
+\item $-1<x\le1$:
+\[
+ \ln(1+x)=x-\frac{x^2}{2}+\frac{x^3}{3}-\frac{x^4}{4}+\cdots.
+\]
+\item $-1\le x\le1$:
+\[
+ \sqrt{1+x}=1+\frac{x}{2}-\frac{x^2}{8}
+ +\frac{x^3}{16}-\frac{5x^4}{128}+\cdots.
+\]
+\item For all real x (radians):
+\[
+ \begin{aligned}
+ \sin x&=x-\frac{x^3}{3!}+\frac{x^5}{5!}-\frac{x^7}{7!}+\cdots,\\
+ \cos x&=1-\frac{x^2}{2!}+\frac{x^4}{4!}-\frac{x^6}{6!}+\cdots.
+ \end{aligned}
+\]
+\end{itemize}
+
+\section{Exact arithmetic and overflow}
+\begin{itemize}[nosep,leftmargin=*]
+\item Signed $b$-bit range: $[-2^{b-1},2^{b-1}-1]$; $b=64,128$.
+\item Promote before arithmetic: \texttt{i128(a)*b}.
+Check intermediate bounds, including negating the signed minimum.
+\end{itemize}
+\kactlimport{Int128.h}
+\begin{itemize}[nosep,leftmargin=*]
+\item \texttt{cpp\_int}: arbitrary-precision integers and stream I/O;
+cost depends on bit length. Range-check before fixed-width conversion.
+\end{itemize}
+\begin{lstlisting}[moredelim={**[s][\color{codeString}]{<}{>}}]
+#include <boost/multiprecision/cpp_int.hpp>
+using boost::multiprecision::cpp_int;
+\end{lstlisting}
+
+\section{Probability}
+\begin{itemize}[nosep,leftmargin=*]
+\item $P(A\mid B)=P(A\cap B)/P(B)$, requiring $P(B)>0$.
+\item Independence: $P(A\cap B)=P(A)P(B)$.
+Pairwise independence need not imply mutual independence.
+\item Partition $(B_i)$, omitting $P(B_i)=0$:
+\[
+ \begin{aligned}
+ P(A)&=\sum_i P(A\mid B_i)P(B_i),\\
+ P(B_j\mid A)&=\frac{P(A\mid B_j)P(B_j)}{P(A)}
+ \quad(P(A)>0).
+ \end{aligned}
+\]
+\end{itemize}
+
+\section{Variance and common distributions}
+\begin{itemize}[nosep,leftmargin=*]
+\item $\operatorname{Var}(X)=\mathbb E[X^2]-\mathbb E[X]^2$.
+For independent variables, $\operatorname{Var}(\sum a_iX_i)=\sum a_i^2\operatorname{Var}(X_i)$.
+\item Hypergeometric: sample n without replacement from N objects, K marked; $0\le n,K\le N$:
+$P(X=k)=\binom Kk\binom{N-K}{n-k}/\binom Nn$; impossible choices give zero.
+\item Poisson, rate $\lambda\ge0$: $P(X=k)=e^{-\lambda}\lambda^k/k!$,
+$k\ge0$; mean and variance $\lambda$.
+\item Uniform on $[a,b]$: mean $(a+b)/2$, variance $(b-a)^2/12$.
+Exponential rate $\lambda>0$: $P(T>t)=e^{-\lambda t}$, $t\ge0$;
+mean $1/\lambda$, variance $1/\lambda^2$.
+\end{itemize}
+
+\section{Expectation}
+\begin{itemize}[nosep,leftmargin=*]
+\item Discrete $X$: $\mathbb E[X]=\sum_x xP(X=x)$.
+For finite expectations, independence is unnecessary:
+\[
+ \mathbb E\!\left[c+\sum_i a_iX_i\right]
+ =c+\sum_i a_i\mathbb E[X_i].
+\]
+\item Indicator $I_A$: $\mathbb E[I_A]=P(A)$;
+expected count $=\sum_i P(A_i)$.
+\item Partition $(B_i)$:
+$\mathbb E[X]=\sum_iP(B_i)\mathbb E[X\mid B_i]$;
+omit zero-probability events.
+\end{itemize}
+
+\section{Binomial and geometric distributions}
+\begin{itemize}[nosep,leftmargin=*]
+\item Binomial: successes in $n\ge0$ independent trials,
+fixed $0\le p\le1$.
+\[
+ P(X=k)=\binom nk p^k(1-p)^{n-k},\quad 0\le k\le n.
+\]
+$\mathbb E[X]=np$; $p=0,1$ are deterministic.
+Sampling without replacement is generally not binomial.
+\item Geometric: independent trials, fixed $0<p\le1$;
+$T$ includes the first success.
+\[
+ P(T=k)=(1-p)^{k-1}p,\quad k\ge1;\qquad
+ \mathbb E[T]=1/p.
+\]
+Failures $T-1$ have mean $(1-p)/p$.
+$p=1$: $T=1$; $p=0$: infinite waiting time.
+\end{itemize}
+
+\kactlimport{Probability.h}
+
+\section{Random processes on states}
+\begin{itemize}[nosep,leftmargin=*]
+\item State contains all relevant history.
+$p_{st}=P(\text{next}=t\mid\text{current}=s)$;
+$p_{st}\ge0$, $\sum_t p_{st}=1$.
+\item Hitting target before failure:
+$h=1$ at targets; $h=0$ at failures and states unable to reach a target;
+otherwise $h_s=\sum_t p_{st}h_t$.
+\item Expected steps: $E=0$ at terminals;
+$E_s=1+\sum_t p_{st}E_t$.
+For expected immediate cost $c_s$, replace 1 by $c_s$.
+\item Self-loop, $p_{ss}<1$:
+\[
+ E_s=\frac{c_s+\sum_{t\ne s}p_{st}E_t}{1-p_{ss}}.
+\]
+For hitting probability, omit $c_s$.
+\item DAG: reverse topological DP, $O(V+E)$.
+Cycles: real Gaussian elimination, $O(V^3)$.
+\item Finite chain: expected steps are finite iff every reachable state
+can reach a terminal through positive-probability edges.
+A reachable closed nonterminal class implies infinite expected time.
+\end{itemize}
+\section{Trigonometry and recurrences}
+\begin{itemize}[nosep,leftmargin=*]
+\item Angles in radians:
+$\sin(u+v)=\sin u\cos v+\cos u\sin v$;
+$\cos(u+v)=\cos u\cos v-\sin u\sin v$.
+$a\cos x+b\sin x=\sqrt{a^2+b^2}\cos(x-\operatorname{atan2}(b,a))$.
+\item For $s_n=\sum_{i=1}^k c_i s_{n-i}$ with $c_k\ne0$: polynomial
+$x^k-\sum_i c_ix^{k-i}$. Distinct roots $r_i$ give $s_n=\sum_i d_ir_i^n$;
+a root of multiplicity m contributes a polynomial of degree m-1 times $r^n$.
+Prefer \texttt{LinearRecurrence.h} for modular computation.
+\end{itemize}
+\par
