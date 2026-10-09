@@ -11,9 +11,7 @@
  */
 vector<bool> visited;
 
-// runs depth first search starting at vertex v.
-// each visited vertex is appended to the output vector when dfs leaves it.
-void dfs(int v, vector<vector<int>> const& adj, vector<int> &output) {
+void dfs(int v, vec<vec<<int>> adj, vector<int> &output) {
     visited[v] = true;
     for (auto u : adj[v])
         if (!visited[u])
@@ -21,12 +19,7 @@ void dfs(int v, vector<vector<int>> const& adj, vector<int> &output) {
     output.push_back(v);
 }
 
-// input: adj -- adjacency list of G
-// output: components -- the strongy connected components in G
-// output: adj_cond -- adjacency list of G^SCC (by root vertices)
-void strongly_connected_components(vector<vector<int>> const& adj,
-                                  vector<vector<int>> &components,
-                                  vector<vector<int>> &adj_cond) {
+void scc(vec<vec<int>> adj, vec<vec<int>> &components, vec<vec<int>> &adj_cond) {
     int n = adj.size();
     components.clear(), adj_cond.clear();
 
@@ -35,9 +28,7 @@ void strongly_connected_components(vector<vector<int>> const& adj,
     visited.assign(n, false);
 
     // first series of depth first searches
-    for (int i = 0; i < n; i++)
-        if (!visited[i])
-            dfs(i, adj, order);
+    for(int i = 0; i < n; i++) if(!visited[i]) dfs(i, adj, order);
 
     // create adjacency list of G^T
     vector<vector<int>> adj_rev(n);
@@ -53,7 +44,7 @@ void strongly_connected_components(vector<vector<int>> const& adj,
     // second series of depth first searches
     for (auto v : order)
         if (!visited[v]) {
-            std::vector<int> component;
+            vector<int> component;
             dfs(v, adj_rev, component);
             components.push_back(component);
             int root = *component.begin();

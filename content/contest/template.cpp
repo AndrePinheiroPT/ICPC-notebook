@@ -5,9 +5,12 @@ typedef long long ll;
 
 #define INF (1ll << 60)
 #define pb push_back
+#define vec vector
 #define f(i,a,b) for(int i = a; i < (b); ++i)
 #define all(x) x.begin(), x.end()
-#define vec vector
+#define sz(x) (int)(x.size())
+
+#define pr(x) cerr << #x << ": " << x << "\n";
 
 void solve(){
 	// Solve goes here
